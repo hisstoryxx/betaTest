@@ -351,9 +351,9 @@ export default class Controls {
                     scrollTrigger: {
                         trigger: ".third-move",
                         start: "center center",
-                        // end: "bottom bottom",
-                        // scrub: 0.6,
-                        // invalidateOnRefresh: true,
+                        end: "bottom bottom",
+                        scrub: 0.6,
+                        invalidateOnRefresh: true,
                     } 
                 });
                 
