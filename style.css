@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -6,8 +7,12 @@
 }
 
 html, body{
-  font-family: "Montserrat", sans-serif;  
+  font-family: "Montserrat", sans-serif;
 }
+
+/* body{
+  overflow: hidden;
+} */
 
 h1,
 section,
@@ -46,14 +51,11 @@ svg{
   --color-blue: var(--color-text-dark);
 }
 
-
-
-
-/* Experience --------------------------------- */
+/* Experience --------------------------------------------- */
 
 .experience{
   position: fixed;
-  width: 100vW;
+  width: 100vw;
   height: 100vh;
 }
 
@@ -66,27 +68,124 @@ svg{
   display: none;
 }
 
-/* Page Itself --------------------------------- */
-.page{
-  z-index: 99999;
-  width:  100%;
+/* Preloader */
+.preloader{
+  background-color: var(--color-background-light);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  opacity: 1;
+  z-index: 99999999999999999;
+}
+
+.preloader-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 100%;
+}
+
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 6px;
+  background-color: var(--color-pink-light);
+  animation: load 1s ease-in-out infinite;
+}
+
+.circle:nth-child(2){
+  animation-delay: 0.1s;
+}
+
+.circle:nth-child(3){
+  animation-delay: 0.2s;
+}
+
+@keyframes load {
+  0% {
+    transform: translateY(0)
+  }
+
+  20% {
+    transform: translateY(-12px)
+  }
+
+  40% {
+    transform: translateY(0)
+  }
+  
+}
+
+/* Page Itself --------------------------------------------- */
+.page{
+  z-index:99999;
+  width: 100%;
+  height: 100vh;
   overflow: hidden;
 }
+
 .page-wrapper{
   position: relative;
 }
 
-/* Toggle Bar --------------------------------- */
+/* Preloader Stuff */
+.animatedis{
+  display: inline-block;
+  transform: translateY(100%);
+}
+
+.intro-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--color-text);
+  transform: translate(-50%, -50%);
+}
+
+.arrow-svg-wrapper{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  opacity: 0;
+  color: var(--color-text);
+  transform: translate(-50%, -50%);
+  animation: bounce 0.5s ease-in alternate infinite;
+}
+
+@keyframes bounce {
+  0%{
+    transform: translateY(0)
+  }
+
+  100%{
+    transform: translateY(8px)
+  }
+}
+
+/* Toggle Bar --------------------------------------------- */
 .toggle-bar{
   position: fixed;
   display: flex;
+  opacity: 0;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   top: 48px;
   right: 48px;
-  z-index: 9999999999;
+  z-index: 99999999999999;
 }
 
 .sun-wrapper, 
@@ -95,7 +194,7 @@ svg{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color:var(--color-text)
+  color: var(--color-text);
 }
 
 .toggle-button{
@@ -124,14 +223,14 @@ svg{
 }
 
 .toggle-button:hover .toggle-circle{
-  transform: scale(0.9)
+  transform: scale(0.9);
 }
 
 .slide{
   left: 31px;
 }
 
-/* Section Formatting --------------------------------- */
+/* Section Formatting --------------------------------------------- */
 .section-margin{
   height: 3000px;
   width: 100%;
@@ -157,7 +256,6 @@ svg{
   border-top-left-radius: 700px 700px;
   border-bottom-left-radius: 0px 0px;
 }
-
 
 /* Progress bars */
 .progress-wrapper{
@@ -186,13 +284,17 @@ svg{
   transform: scaleY(1);
 }
 
+/* Sections -------------- */
 
-/* Sections ------------------ */
 .section-intro-wrapper{
   position: relative;
   padding: 20% 5%;
   border-bottom: 2px solid var(--color-pink);
   padding-bottom: 400px;
+}
+
+.section-intro-wrapper:nth-child(3){
+  border-bottom: 2px solid var(--color-green);
 }
 
 .section-detail-wrapper{
@@ -215,8 +317,7 @@ svg{
   color: var(--color-text);
 }
 
-/* Fancy Decoration Part of Section --------------------------------- */
-
+/* Fancy Decoration Part of Section */
 .section-title{
   position: relative;
   color: var(--color-pink)
@@ -239,7 +340,7 @@ svg{
   position: absolute;
   display: block;
   width: 100%;
-  max-width:  278px;
+  max-width: 278px;
   height: 60px;
   border: 1px solid var(--color-pink);
   transform-origin: left;
@@ -251,7 +352,7 @@ svg{
 }
 
 .styleTwo{
-  top: 80px
+  top: 80px;
 }
 
 .styleThree{
@@ -268,7 +369,8 @@ svg{
   font-size: 24px;
 }
 
-/* Hero section --------------------------------- */
+
+/* Hero section -------------------------------- */
 
 .hero{
   width: 100vw;
@@ -278,7 +380,7 @@ svg{
 .hero-wrapper{
   position: relative;
   height: 100%;
-  width: calc(100% - 160px);
+  width: 100%;
   margin: 0 auto;
   max-width: 1100px;
 }
@@ -314,15 +416,14 @@ svg{
 }
 
 
-/* Othercolors  */
-
+/* Other colors override */
 
 .blue-text{
   color: var(--color-blue)
 }
 
 .blue-border{
-  border-color:  var(--color-blue)
+  border-color: var(--color-blue);
 }
 
 .blue-background{
@@ -334,14 +435,15 @@ svg{
 }
 
 .green-border{
-  border-color: var(--color-green)
+  border-color: var(--color-green);
 }
 
 .green-background{
   background-color: var(--color-green);
 }
 
-/* Media Quries */
+
+/* Media Queries */
 
 @media (max-width: 968px){
   .section{
@@ -350,5 +452,23 @@ svg{
   .progress-bar-wrapper-left{
     right: 0;
     left: auto;
+  }
+  .hero-main{
+    bottom: 120px;
+  }
+  .hero-second{
+    top: 160px;
+  }
+  .hero-wrapper{
+    width: calc(100% - 60px);
+  }
+  .hero-main-title{
+    font-size: 32px;
+  }
+  .hero-main-description{
+    font-size: 18px;
+  }
+  .hero-second-subheading{
+    font-size: 18px;
   }
 }

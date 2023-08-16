@@ -1,10 +1,12 @@
+import * as THREE from "three";
+
 import { EventEmitter } from "events";
-import Experience from "../Experience"
-import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader"
-import {DRACOLoader} from "three/examples/jsm/loaders/DRACOLoader"
-import * as THREE from "three"
-export default class Resources extends EventEmitter{
-    constructor(assets){
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
+import Experience from "../Experience.js";
+
+export default class Resources extends EventEmitter {
+    constructor(assets) {
         super();
         this.experience = new Experience();
         this.renderer = this.experience.renderer;
@@ -17,26 +19,22 @@ export default class Resources extends EventEmitter{
 
         this.setLoaders();
         this.startLoading();
-
-        
     }
 
-    setLoaders(){
+    setLoaders() {
         this.loaders = {};
         this.loaders.gltfLoader = new GLTFLoader();
         this.loaders.dracoLoader = new DRACOLoader();
         this.loaders.dracoLoader.setDecoderPath("/draco/");
         this.loaders.gltfLoader.setDRACOLoader(this.loaders.dracoLoader);
-
-    };        
-   
-    startLoading(){
-        for(const asset of this.assets){
-            if(asset.type === "glbModel"){
+    }
+    startLoading() {
+        for (const asset of this.assets) {
+            if (asset.type === "glbModel") {
                 this.loaders.gltfLoader.load(asset.path, (file) => {
-                    this.singleAssetLoader(asset, file);
-                }); 
-            }else if (asset.type === "videoTexture"){
+                    this.singleAssetLoaded(asset, file);
+                });
+            } else if (asset.type === "videoTexture") {
                 this.video = {};
                 this.videoTexture = {};
 
@@ -51,25 +49,23 @@ export default class Resources extends EventEmitter{
                 this.videoTexture[asset.name] = new THREE.VideoTexture(
                     this.video[asset.name]
                 );
-                this.videoTexture[asset.name].flipy = true;
+                // this.videoTexture[asset.name].flipY = false;
                 this.videoTexture[asset.name].minFilter = THREE.NearestFilter;
                 this.videoTexture[asset.name].magFilter = THREE.NearestFilter;
                 this.videoTexture[asset.name].generateMipmaps = false;
                 this.videoTexture[asset.name].encoding = THREE.sRGBEncoding;
 
-                this.singleAssetLoader(asset, this.videoTexture[asset.name]);
-           }
+                this.singleAssetLoaded(asset, this.videoTexture[asset.name]);
+            }
         }
-    };
+    }
 
-    singleAssetLoader(asset, file){
+    singleAssetLoaded(asset, file) {
         this.items[asset.name] = file;
         this.loaded++;
 
-        console.log("asset is loading");
-        if(this.loaded == this.queue){
-           //  console.log("all assets are done")
+        if (this.loaded === this.queue) {
             this.emit("ready");
-        } 
+        }
     }
 }
