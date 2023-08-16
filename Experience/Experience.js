@@ -12,6 +12,8 @@ import Preloader from "./Preloader.js";
 
 import World from "./World/World.js";
 import Controls from "./World/Controls.js";
+import confetti from "canvas-confetti";
+
 
 export default class Experience {
     static instance;
@@ -32,7 +34,12 @@ export default class Experience {
         this.preloader = new Preloader();
 
         this.preloader.on("enablecontrols", () => {
+            this.confetti = new confetti({
+                particleCount: 100,
+                spread: 100
+            });
             this.controls = new Controls();
+            
         });
 
         this.sizes.on("resize", () => {

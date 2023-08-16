@@ -7,6 +7,7 @@ import Controls from "./Controls.js";
 import Environment from "./Environment.js";
 import { EventEmitter } from "events";
 
+
 export default class World extends EventEmitter {
     constructor() {
         super();
@@ -17,6 +18,7 @@ export default class World extends EventEmitter {
         this.camera = this.experience.camera;
         this.resources = this.experience.resources;
         this.theme = this.experience.theme;
+        
 
         this.resources.on("ready", () => {
             this.environment = new Environment();

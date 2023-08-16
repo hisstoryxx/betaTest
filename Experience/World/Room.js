@@ -39,17 +39,17 @@ export default class Room {
 
             // console.log(child);
 
-            // if (child.name === "Aquarium") {
-            //     // console.log(child);
-            //     child.children[0].material = new THREE.MeshPhysicalMaterial();
-            //     child.children[0].material.roughness = 0;
-            //     child.children[0].material.color.set(0x549dd2);
-            //     child.children[0].material.ior = 3;
-            //     child.children[0].material.transmission = 1;
-            //     child.children[0].material.opacity = 1;
-            //     child.children[0].material.depthWrite = false;
-            //     child.children[0].material.depthTest = false;
-            // }
+            if (child.name === "Aquarium") {
+                // console.log(child);
+                child.children[0].material = new THREE.MeshPhysicalMaterial();
+                child.children[0].material.roughness = 0;
+                child.children[0].material.color.set(0x549dd2);
+                child.children[0].material.ior = 3;
+                child.children[0].material.transmission = 1;
+                child.children[0].material.opacity = 1;
+                child.children[0].material.depthWrite = false;
+                child.children[0].material.depthTest = false;
+            }
 
             if (child.name === "Computer") {
                 child.children[1].material = new THREE.MeshBasicMaterial({
@@ -57,7 +57,7 @@ export default class Room {
                 });
             }
 
-            if (child.name === "MiniFloor") {
+            if (child.name === "Mini_Floor") {
                 child.position.x = -0.289521;
                 child.position.z = 8.83572;
             }
@@ -76,7 +76,6 @@ export default class Room {
             // }
 
             child.scale.set(0, 0, 0);
-            child.scale.set(1, 1, 1);
             if (child.name === "Cube") {
                 // child.scale.set(1, 1, 1);
                 child.position.set(0, -1, 0);
@@ -111,9 +110,8 @@ export default class Room {
     }
 
     setAnimation() {
-        console.log(this.room)
         this.mixer = new THREE.AnimationMixer(this.actualRoom);
-        this.swim = this.mixer.clipAction(this.room.animations[8]);
+        this.swim = this.mixer.clipAction(this.room.animations[0]);
         this.swim.play();
     }
 

@@ -1,7 +1,7 @@
 import { EventEmitter } from "events";
 import Experience from "./Experience.js";
 import GSAP from "gsap";
-import convert from "./Utils/covertDivsToSpans.js";
+import convert from "./Utils/convertDivsToSpans.js";
 
 export default class Preloader extends EventEmitter {
     constructor() {
@@ -217,7 +217,7 @@ export default class Preloader extends EventEmitter {
                     "introtext"
                 )
                 .to(
-                    this.roomChildren.rightdrawer.scale,
+                    this.roomChildren.aquarium.scale,
                     {
                         x: 1,
                         y: 1,
@@ -250,7 +250,7 @@ export default class Preloader extends EventEmitter {
                     ">-0.3"
                 )
                 .to(
-                    this.roomChildren.flooritems.scale,
+                    this.roomChildren.floor_items.scale,
                     {
                         x: 1,
                         y: 1,
@@ -272,7 +272,7 @@ export default class Preloader extends EventEmitter {
                     ">-0.1"
                 )
                 .to(
-                    this.roomChildren.tablestuff.scale,
+                    this.roomChildren.table_stuff.scale,
                     {
                         x: 1,
                         y: 1,
@@ -289,7 +289,7 @@ export default class Preloader extends EventEmitter {
                     ease: "back.out(2.2)",
                     duration: 0.5,
                 })
-                .set(this.roomChildren.minifloor.scale, {
+                .set(this.roomChildren.mini_floor.scale, {
                     x: 1,
                     y: 1,
                     z: 1,
