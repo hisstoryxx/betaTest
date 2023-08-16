@@ -75,7 +75,9 @@ export default class Room {
             //     child.scale.set(0, 0, 0);
             // }
 
-            child.scale.set(0, 0, 0);
+            //child.scale.set(0, 0, 0);
+            child.scale.set(1, 1, 1);
+
             if (child.name === "Cube") {
                 // child.scale.set(1, 1, 1);
                 child.position.set(0, -1, 0);
@@ -94,7 +96,7 @@ export default class Room {
             width,
             height
         );
-        rectLight.position.set(7.68244, 7, 0.5);
+        rectLight.position.set(4.6477, 3.788, 6,2152);
         rectLight.rotation.x = -Math.PI / 2;
         rectLight.rotation.z = Math.PI / 4;
         this.actualRoom.add(rectLight);
@@ -103,7 +105,7 @@ export default class Room {
 
         // const rectLightHelper = new RectAreaLightHelper(rectLight);
         // rectLight.add(rectLightHelper);
-        // console.log(this.room);
+        console.log("roon", this.room);
 
         this.scene.add(this.actualRoom);
         this.actualRoom.scale.set(0.11, 0.11, 0.11);
@@ -111,7 +113,7 @@ export default class Room {
 
     setAnimation() {
         this.mixer = new THREE.AnimationMixer(this.actualRoom);
-        this.swim = this.mixer.clipAction(this.room.animations[0]);
+        this.swim = this.mixer.clipAction(this.room.animations[10]);
         this.swim.play();
     }
 

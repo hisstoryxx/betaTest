@@ -34,7 +34,8 @@ export default class Resources extends EventEmitter {
                 this.loaders.gltfLoader.load(asset.path, (file) => {
                     this.singleAssetLoaded(asset, file);
                 });
-            } else if (asset.type === "videoTexture") {
+            } 
+            else if (asset.type === "videoTexture") {
                 this.video = {};
                 this.videoTexture = {};
 
