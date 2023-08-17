@@ -80,9 +80,10 @@ export default class Room {
             }
 
 
-            if (child.name === "MiniFloor") {
-                child.position.x = 0.003385 ;
-                child.position.z = -0.264423 ;
+            if (child.name === "minifloor") {
+                
+                child.position.x = 0.18952;
+                child.position.z = 6.48495;
             }
 
            
@@ -158,7 +159,7 @@ export default class Room {
 
     setAnimation() {
         this.mixer = new THREE.AnimationMixer(this.actualRoom);
-        this.swim = this.mixer.clipAction(this.room.animations[7]);
+        this.swim = this.mixer.clipAction(this.room.animations[6]);
         this.swim.play();
     }
 

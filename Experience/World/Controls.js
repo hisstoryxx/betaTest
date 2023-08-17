@@ -449,16 +449,27 @@ export default class Controls {
                     scrollTrigger: {
                         trigger: ".third-move",
                         start: "center center",
+                        
+                        
                     },
                 });
 
                 this.room.children.forEach((child) => {
-                    if (child.name === "MiniFloor") {
+                    if (child.name === "minifloor") {
+                        console.log('저녁',child)
                         this.first = GSAP.to(child.position, {
-                            x: -10,
-                            z: 10,
+                            x: -4.55761,
+                            z: 11.2323,
+                            duration: 1,
+                        });
+
+                        this.first = GSAP.to(child.scale, {
+                            x: 1,
+                            y: 1,
+                            z: 1,
                             duration: 0.3,
                         });
+                      
                     }
                     if (child.name === "Mailbox") {
                         this.second = GSAP.to(child.scale, {
