@@ -26,12 +26,13 @@ export default class Room {
 
     setModel() {
         this.actualRoom.children.forEach((child) => {
+            console.log('here', child)
             child.castShadow = true;
             child.receiveShadow = true;
 
             if (child instanceof THREE.Group) {
                 child.children.forEach((groupchild) => {
-                    console.log(groupchild.material);
+                    //console.log('ㅎㅎ',groupchild);
                     groupchild.castShadow = true;
                     groupchild.receiveShadow = true;
                 });
@@ -51,16 +52,40 @@ export default class Room {
                 child.children[0].material.depthTest = false;
             }
 
-            if (child.name === "Computer") {
-                child.children[1].material = new THREE.MeshBasicMaterial({
-                    map: this.resources.items.screen,
-                });
+            
+            if (child.name === "glassbase") {
+                console.log(child);
+                child.material = new THREE.MeshPhysicalMaterial();
+                child.material.roughness = 0.01;
+                child.material.color.set(0xffffff);
+                child.material.ior = 3;
+                child.material.transmission = 1;
+                //child.material.transparent = true;
+                child.material.opacity = 1;
+                child.material.depthWrite = true;
+                child.material.depthTest = true;
+                
             }
 
-            if (child.name === "Mini_Floor") {
-                child.position.x = -0.289521;
-                child.position.z = 8.83572;
+            if (child.name === "water") {
+                console.log('water',child);
+                child.material = new THREE.MeshPhysicalMaterial();
+                child.material.roughness = -1;
+                child.material.color.set(0x8395cd);
+                child.material.ior = 3;
+                //child.material.transmission = 0.2;
+                child.material.opacity = 1;
+                child.material.depthWrite = false;
+                child.material.depthTest = false;
             }
+
+
+            if (child.name === "MiniFloor") {
+                child.position.x = 0.003385 ;
+                child.position.z = -0.264423 ;
+            }
+
+           
 
             // if (
             //     child.name === "Mailbox" ||
@@ -75,8 +100,8 @@ export default class Room {
             //     child.scale.set(0, 0, 0);
             // }
 
-            //child.scale.set(0, 0, 0);
-            child.scale.set(1, 1, 1);
+            child.scale.set(0, 0, 0);
+            //child.scale.set(1, 1, 1);
 
             if (child.name === "Cube") {
                 // child.scale.set(1, 1, 1);
@@ -107,13 +132,33 @@ export default class Room {
         // rectLight.add(rectLightHelper);
         console.log("roon", this.room);
 
+        // this.scene.add(this.actualRoom);
+        // this.actualRoom.scale.set(0.11, 0.11, 0.11);
+
+        // const topLight = new THREE.RectAreaLight(
+        //     0xFFF1A7,
+        //     intensity,
+        //     width,
+        //     height
+        // );
+        // topLight.position.set(-0.127165 , 20 , 1.73243 );
+        // topLight.rotation.x = -Math.PI / 2;
+        // topLight.rotation.z = Math.PI / 4;
+        // this.actualRoom.add(topLight);
+
+        // this.roomChildren["topLight"] = topLight;
+
+        // // const rectLightHelper = new RectAreaLightHelper(rectLight);
+        // // rectLight.add(rectLightHelper);
+        // console.log("roon", this.room);
+
         this.scene.add(this.actualRoom);
         this.actualRoom.scale.set(0.11, 0.11, 0.11);
     }
 
     setAnimation() {
         this.mixer = new THREE.AnimationMixer(this.actualRoom);
-        this.swim = this.mixer.clipAction(this.room.animations[10]);
+        this.swim = this.mixer.clipAction(this.room.animations[7]);
         this.swim.play();
     }
 
@@ -121,7 +166,7 @@ export default class Room {
         window.addEventListener("mousemove", (e) => {
             this.rotation =
                 ((e.clientX - window.innerWidth / 2) * 2) / window.innerWidth;
-            this.lerp.target = this.rotation * 0.05;
+            this.lerp.target = this.rotation * 0.1;
         });
     }
 

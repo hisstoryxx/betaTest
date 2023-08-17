@@ -39,7 +39,7 @@ export default class Environment {
         // const helper = new THREE.CameraHelper(this.sunLight.shadow.camera);
         // this.scene.add(helper);
 
-        this.sunLight.position.set(-1.5, 7, 3);
+        this.sunLight.position.set(-3, 7, 3);
         this.scene.add(this.sunLight);
 
         this.ambientLight = new THREE.AmbientLight("#ffffff", 1);
@@ -60,10 +60,10 @@ export default class Environment {
                 b: 0.6862745098039216,
             });
             GSAP.to(this.sunLight, {
-                intensity: 0.78,
+                intensity: 0.9,
             });
             GSAP.to(this.ambientLight, {
-                intensity: 0.78,
+                intensity: 1,
             });
         } else {
             GSAP.to(this.sunLight.color, {

@@ -371,10 +371,10 @@ export default class Controls {
                 });
 
                 this.room.children.forEach((child) => {
-                    if (child.name === "Mini_Floor") {
+                    if (child.name === "MiniFloor") {
                         this.first = GSAP.to(child.position, {
-                            x: -5.44055,
-                            z: 13.6135,
+                            x: -10,
+                            z: 10,
                             duration: 0.3,
                         });
                     }
@@ -439,8 +439,17 @@ export default class Controls {
                             duration: 0.3,
                         });
                     }
-                    if (child.name === "Flower2") {
+                    if (child.name === "car1") {
                         this.ninth = GSAP.to(child.scale, {
+                            x: 1,
+                            y: 1,
+                            z: 1,
+                            ease: "back.out(2)",
+                            duration: 0.3,
+                        });
+                    }
+                    if (child.name === "car2") {
+                        this.tenth = GSAP.to(child.scale, {
                             x: 1,
                             y: 1,
                             z: 1,
@@ -458,6 +467,7 @@ export default class Controls {
                 this.secondPartTimeline.add(this.seventh, "-=0.2");
                 this.secondPartTimeline.add(this.eighth);
                 this.secondPartTimeline.add(this.ninth, "-=0.1");
+                this.secondPartTimeline.add(this.tenth, "-=0.1");
             },
         });
     }
