@@ -482,10 +482,7 @@ svg{
   }
 
   .section-intro-wrapper{
-    position: relative;
     padding: 5% 2%;
-    border-bottom: 2px solid var(--color-pink);
-    padding-bottom: 50px;
   }
   
   .section-intro-wrapper:nth-child(3){
@@ -493,7 +490,6 @@ svg{
   }
   
   .section-detail-wrapper{
-    position: relative;
     padding: 5% 2%;
   }
 
