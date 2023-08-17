@@ -234,7 +234,7 @@ export default class Preloader extends EventEmitter {
                         y: 1,
                         z: 1,
                         ease: "back.out(2.2)",
-                        duration: 0.5,
+                        duration: 0.3,
                     },
                     ">-0.4"
                 )
@@ -245,7 +245,7 @@ export default class Preloader extends EventEmitter {
                         y: 1,
                         z: 1,
                         ease: "back.out(2.2)",
-                        duration: 0.5,
+                        duration: 0.3,
                     },
                     ">-0.3"
                 )
@@ -256,7 +256,7 @@ export default class Preloader extends EventEmitter {
                         y: 1,
                         z: 1,
                         ease: "back.out(2.2)",
-                        duration: 0.5,
+                        duration: 0.3,
                     },
                     ">-0.3"
                 )
@@ -267,7 +267,7 @@ export default class Preloader extends EventEmitter {
                         y: 1,
                         z: 1,
                         ease: "back.out(2.2)",
-                        duration: 0.5,
+                        duration: 0.3,
                     },
                     ">-0.3"
                 )
@@ -278,7 +278,7 @@ export default class Preloader extends EventEmitter {
                         y: 1,
                         z: 1,
                         ease: "back.out(2.2)",
-                        duration: 0.5,
+                        duration: 0.3,
                     },
                     ">-0.2"
                 )
@@ -290,7 +290,7 @@ export default class Preloader extends EventEmitter {
                         y: 1,
                         z: 1,
                         ease: "back.out(2.2)",
-                        duration: 0.5,
+                        duration: 0.3,
                     },
                     ">-0.1"
                 )
@@ -299,7 +299,7 @@ export default class Preloader extends EventEmitter {
                     y: 1,
                     z: 1,
                     ease: "back.out(2.2)",
-                    duration: 0.5,
+                    duration: 0.3,
                 })
                 // .to(this.roomChildren.candle1.scale, {
                 //     x: 1,
@@ -327,70 +327,70 @@ export default class Preloader extends EventEmitter {
                     y: 1,
                     z: 1,
                     ease: "back.out(2.2)",
-                    duration: 0.5,
+                    duration: 0.3,
                 })
                 .to(this.roomChildren.chamomile.scale, {
                     x: 1,
                     y: 1,
                     z: 1,
                     ease: "back.out(2.2)",
-                    duration: 0.5,
+                    duration: 0.3,
                 })
                 .to(this.roomChildren.photo1.scale, {
                     x: 1,
                     y: 1,
                     z: 1,
                     ease: "back.out(2.2)",
-                    duration: 0.5,
+                    duration: 0.3,
                 }, ">-0.1")
                 .to(this.roomChildren.wallphoto1.scale, {
                     x: 1,
                     y: 1,
                     z: 1,
                     ease: "back.out(2.2)",
-                    duration: 0.5,
+                    duration: 0.3,
                 }, ">-0.1")
                 .to(this.roomChildren.photo2.scale, {
                     x: 1,
                     y: 1,
                     z: 1,
                     ease: "back.out(2.2)",
-                    duration: 0.5,
+                    duration: 0.3,
                 },">-0.0")
                 .to(this.roomChildren.photo3.scale, {
                     x: 1,
                     y: 1,
                     z: 1,
                     ease: "back.out(2.2)",
-                    duration: 0.5,
+                    duration: 0.3,
                 },">-0.0")
                 .to(this.roomChildren.photo4.scale, {
                     x: 1,
                     y: 1,
                     z: 1,
                     ease: "back.out(2.2)",
-                    duration: 0.5,
+                    duration: 0.3,
                 },">-0.0")
                 .to(this.roomChildren.photo5.scale, {
                     x: 1,
                     y: 1,
                     z: 1,
                     ease: "back.out(2.2)",
-                    duration: 0.5,
-                })
+                    duration: 0.3,
+                },">-0.0")
                 .to(this.roomChildren.window.scale, {
                     x: 1,
                     y: 1,
                     z: 1,
                     ease: "back.out(2.2)",
-                    duration: 0.5,
+                    duration: 0.3,
                 },"after")
                 .to(this.roomChildren.toplight.scale, {
                     x: 1,
                     y: 1,
                     z: 1,
                     ease: "back.out(2.2)",
-                    duration: 0.5,
+                    duration: 0.3,
                 },"after")
                 // .set(this.roomChildren.mini_floor.scale, {
                 //     x: 1,
@@ -404,7 +404,7 @@ export default class Preloader extends EventEmitter {
                         y: 1,
                         z: 1,
                         ease: "back.out(2.2)",
-                        duration: 0.5,
+                        duration: 0.3,
                     },
                     ">-0.1"
                 )
@@ -415,7 +415,7 @@ export default class Preloader extends EventEmitter {
                         y: 1,
                         z: 1,
                         ease: "back.out(2.2)",
-                        duration: 0.5,
+                        duration: 0.3,
                     },
                     "chair"
                 )

@@ -97,25 +97,71 @@ export default class Controls {
                 this.camera.orthographicCamera.position.set(0, 6.5, 10);
                 this.room.position.set(0, 0, 0);
                 // First section -----------------------------------------
+                // this.firstMoveTimeline = new GSAP.timeline({
+                //     scrollTrigger: {
+                //         trigger: ".first-move",
+                //         start: "top top",
+                //         end: "bottom bottom",
+                //         scrub: 0.6,
+                //         // markers: true,
+                //         invalidateOnRefresh: true,
+                //     },
+                // });
+                // this.firstMoveTimeline.fromTo(
+                //     this.room.position,
+                //     { x: 0, y: 0, z: 0 },
+                //     {
+                //         x: () => {
+                //             return this.sizes.width * 0.0014;
+                //         },
+                //     }
+                // );
+
                 this.firstMoveTimeline = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".first-move",
                         start: "top top",
                         end: "bottom bottom",
-                        scrub: 0.6,
-                        // markers: true,
+                        scrub: 2,
                         invalidateOnRefresh: true,
                     },
-                });
+                })
                 this.firstMoveTimeline.fromTo(
-                    this.room.position,
-                    { x: 0, y: 0, z: 0 },
-                    {
-                        x: () => {
-                            return this.sizes.width * 0.0014;
+                        this.room.position,
+                        { x: 0, y: 0, z: 0 },
+                        {
+                            x: () => {
+                                return this.sizes.width * 0.0014;
+                            },
+                        }
+                )
+                    .to(
+                        this.room.scale,
+                        {
+                            x: 0.25,
+                            y: 0.25,
+                            z: 0.25,
+                        }
+                    )
+                    .to(
+                        this.rectLight,
+                        {
+                            width: 0.3 * 3.4,
+                            height: 0.4 * 3.4,
                         },
-                    }
-                );
+                        "start"
+                    )
+                    .to(
+                        this.room.position,
+                        {
+                            x: 1,
+                            z: 3,
+                        },
+                        "start"
+                    );
+
+
+
 
                 // Second section -----------------------------------------
                 this.secondMoveTimeline = new GSAP.timeline({
@@ -131,10 +177,10 @@ export default class Controls {
                         this.room.position,
                         {
                             x: () => {
-                                return 1;
+                                return 0.6;
                             },
                             z: () => {
-                                return this.sizes.height * 0.0032;
+                                return this.sizes.height * 0.005;
                             },
                         },
                         "same"
@@ -142,17 +188,17 @@ export default class Controls {
                     .to(
                         this.room.scale,
                         {
-                            x: 0.4,
-                            y: 0.4,
-                            z: 0.4,
+                            x: 0.3,
+                            y: 0.3,
+                            z: 0.3,
                         },
                         "same"
                     )
                     .to(
                         this.rectLight,
                         {
-                            width: 0.5 * 4,
-                            height: 0.7 * 4,
+                            width: 0.5 * 3,
+                            height: 0.7 * 3,
                         },
                         "same"
                     );
@@ -184,19 +230,55 @@ export default class Controls {
                 this.camera.orthographicCamera.position.set(0, 6.5, 10);
 
                 // First section -----------------------------------------
+                // this.firstMoveTimeline = new GSAP.timeline({
+                //     scrollTrigger: {
+                //         trigger: ".first-move",
+                //         start: "top top",
+                //         end: "bottom bottom",
+                //         scrub: 0.6,
+                //         // invalidateOnRefresh: true,
+                //     },
+                // }).to(this.room.scale, {
+                //     x: 0.1,
+                //     y: 0.1,
+                //     z: 0.1,
+                // });
+
                 this.firstMoveTimeline = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".first-move",
                         start: "top top",
                         end: "bottom bottom",
-                        scrub: 0.6,
-                        // invalidateOnRefresh: true,
+                        scrub: 0.2,
+                        invalidateOnRefresh: true,
                     },
-                }).to(this.room.scale, {
-                    x: 0.1,
-                    y: 0.1,
-                    z: 0.1,
-                });
+                })
+                    .to(
+                        this.room.scale,
+                        {
+                            x: 0.25,
+                            y: 0.25,
+                            z: 0.25,
+                        },
+                        "start"
+                    )
+                    .to(
+                        this.rectLight,
+                        {
+                            width: 0.3 * 3.4,
+                            height: 0.4 * 3.4,
+                        },
+                        "start"
+                    )
+                    .to(
+                        this.room.position,
+                        {
+                            x: -1,
+                            z: 2.5,
+                        },
+                        "start"
+                    );
+
 
                 // Second section -----------------------------------------
                 this.secondMoveTimeline = new GSAP.timeline({
@@ -204,7 +286,7 @@ export default class Controls {
                         trigger: ".second-move",
                         start: "top top",
                         end: "bottom bottom",
-                        scrub: 0.6,
+                        scrub: 0.2,
                         invalidateOnRefresh: true,
                     },
                 })

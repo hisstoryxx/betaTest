@@ -235,14 +235,14 @@ svg{
 
 /* Section Formatting --------------------------------------------- */
 .section-margin{
-  height: 3000px;
+  height: 1000px;
   width: 100%;
 }
 
 .section{
   position: relative;
   width: 50%;
-  padding: 1000px 4%;
+  padding: 0 4%;
   margin: 0;
   background-color: var(--color-background);
   overflow: hidden;
@@ -291,9 +291,9 @@ svg{
 
 .section-intro-wrapper{
   position: relative;
-  padding: 20% 5%;
+  padding: 10% 5%;
   border-bottom: 2px solid var(--color-pink);
-  padding-bottom: 400px;
+  padding-bottom: 100px;
 }
 
 .section-intro-wrapper:nth-child(3){
@@ -302,21 +302,26 @@ svg{
 
 .section-detail-wrapper{
   position: relative;
-  padding: 20% 5%;
+  padding: 10% 5%;
 }
 
 .section-heading{
-  font-size: 18px;
+  font-size: 28px;
   font-weight: 700;
   line-height: 1.8;
-  margin-top: 64px;
+  margin-top: 32px;
+  text-align: center;
   color: var(--color-text);
+}
+.name{
+  font-size: 33px;
 }
 
 .section-text{
   line-height: 2;
   margin-top: 18px;
-  font-size: 16px;
+  font-size: 22px;
+  text-align: center;
   color: var(--color-text);
 }
 
@@ -474,5 +479,41 @@ svg{
   }
   .hero-second-subheading{
     font-size: 18px;
+  }
+
+  .section-intro-wrapper{
+    position: relative;
+    padding: 5% 2%;
+    border-bottom: 2px solid var(--color-pink);
+    padding-bottom: 50px;
+  }
+  
+  .section-intro-wrapper:nth-child(3){
+    border-bottom: 2px solid var(--color-green);
+  }
+  
+  .section-detail-wrapper{
+    position: relative;
+    padding: 5% 2%;
+  }
+
+  .section-heading{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.8;
+    margin-top: 20px;
+    text-align: center;
+    color: var(--color-text);
+  }
+  .name{
+    font-size: 19px;
+  }
+  
+  .section-text{
+    line-height: 2;
+    margin-top: 12px;
+    font-size: 15px;
+    text-align: center;
+    color: var(--color-text);
   }
 }
