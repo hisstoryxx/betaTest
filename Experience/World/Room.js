@@ -53,31 +53,31 @@ export default class Room {
             }
 
             
-            if (child.name === "glassbase") {
-                console.log(child);
-                child.material = new THREE.MeshPhysicalMaterial();
-                child.material.roughness = 0.01;
-                child.material.color.set(0xffffff);
-                child.material.ior = 3;
-                child.material.transmission = 1;
-                //child.material.transparent = true;
-                child.material.opacity = 1;
-                child.material.depthWrite = true;
-                child.material.depthTest = true;
+            // if (child.name === "glassbase") {
+            //     console.log(child);
+            //     child.material = new THREE.MeshPhysicalMaterial();
+            //     child.material.roughness = 0.01;
+            //     child.material.color.set(0xffffff);
+            //     child.material.ior = 3;
+            //     child.material.transmission = 1;
+            //     //child.material.transparent = true;
+            //     child.material.opacity = 1;
+            //     child.material.depthWrite = true;
+            //     child.material.depthTest = true;
                 
-            }
+            // }
 
-            if (child.name === "water") {
-                console.log('water',child);
-                child.material = new THREE.MeshPhysicalMaterial();
-                child.material.roughness = -1;
-                child.material.color.set(0x8395cd);
-                child.material.ior = 3;
-                //child.material.transmission = 0.2;
-                child.material.opacity = 1;
-                child.material.depthWrite = false;
-                child.material.depthTest = false;
-            }
+            // if (child.name === "water") {
+            //     console.log('water',child);
+            //     child.material = new THREE.MeshPhysicalMaterial();
+            //     child.material.roughness = -1;
+            //     child.material.color.set(0x8395cd);
+            //     child.material.ior = 3;
+            //     //child.material.transmission = 0.2;
+            //     child.material.opacity = 1;
+            //     child.material.depthWrite = false;
+            //     child.material.depthTest = false;
+            // }
 
 
             if (child.name === "minifloor") {
@@ -159,7 +159,8 @@ export default class Room {
 
     setAnimation() {
         this.mixer = new THREE.AnimationMixer(this.actualRoom);
-        this.swim = this.mixer.clipAction(this.room.animations[6]);
+        this.swim = this.mixer.clipAction(this.room.animations[3]);
+        this.swim = this.mixer.clipAction(this.room.animations[5]);
         this.swim.play();
     }
 

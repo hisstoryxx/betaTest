@@ -402,8 +402,8 @@ svg{
 
 .hero-second{
   position: absolute;
-  top: calc(50% - 120px);
-  right: 0;
+  bottom: calc(270px);
+  left: 0;
   color: var(--color-text);
 }
 
