@@ -26,7 +26,7 @@ export default class Room {
 
     setModel() {
         this.actualRoom.children.forEach((child) => {
-            console.log('here', child)
+            //console.log('here', child)
             child.castShadow = true;
             child.receiveShadow = true;
 
@@ -67,17 +67,31 @@ export default class Room {
                 
             // }
 
-            // if (child.name === "water") {
-            //     console.log('water',child);
-            //     child.material = new THREE.MeshPhysicalMaterial();
-            //     child.material.roughness = -1;
-            //     child.material.color.set(0x8395cd);
-            //     child.material.ior = 3;
-            //     //child.material.transmission = 0.2;
-            //     child.material.opacity = 1;
-            //     child.material.depthWrite = false;
-            //     child.material.depthTest = false;
-            // }
+            if (child.name === "RealFlame") {
+                
+                child.material = new THREE.MeshPhysicalMaterial();
+                child.material.roughness = -1;
+                child.material.color.set(0xff9e80);
+                child.material.ior = 3;
+                //child.material.transmission = 0.2;
+                child.material.opacity = 1;
+                child.material.depthWrite = false;
+                child.material.depthTest = false;
+            }
+
+            if (child.name === "topFlame") {
+                
+                child.material = new THREE.MeshPhysicalMaterial();
+                child.material.roughness = -1;
+                child.material.color.set(0xF25C05);
+                child.material.ior = 3;
+                //child.material.transmission = 0.2;
+                child.material.opacity = 1;
+                child.material.depthWrite = false;
+                child.material.depthTest = false;
+            }
+
+           
 
 
             if (child.name === "minifloor") {
@@ -131,7 +145,7 @@ export default class Room {
 
         // const rectLightHelper = new RectAreaLightHelper(rectLight);
         // rectLight.add(rectLightHelper);
-        console.log("roon", this.room);
+        //console.log("roon", this.room);
 
         // this.scene.add(this.actualRoom);
         // this.actualRoom.scale.set(0.11, 0.11, 0.11);

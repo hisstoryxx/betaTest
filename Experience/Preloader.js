@@ -217,6 +217,15 @@ export default class Preloader extends EventEmitter {
                     "introtext"
                 )
                 .to(
+                    ".third-sub .animatedis",
+                    {
+                        yPercent: 0,
+                        stagger: 0.07,
+                        ease: "back.out(1.7)",
+                    },
+                    "introtext"
+                )
+                .to(
                     this.roomChildren.woodfloor.scale,
                     {
                         x: 1,
@@ -452,13 +461,22 @@ export default class Preloader extends EventEmitter {
         }
     }
 
-    onTouch(e) {
+    onTouchStart(e) {
         this.initalY = e.touches[0].clientY;
+        
+        
+        if (this.initalY > 0) {
+            console.log("swipped up");
+            this.removeEventListeners();
+            this.playSecondIntro();
+        }
+        this.intialY = null;
     }
 
     onTouchMove(e) {
         let currentY = e.touches[0].clientY;
         let difference = this.initalY - currentY;
+        
         if (difference > 0) {
             console.log("swipped up");
             this.removeEventListeners();
@@ -478,7 +496,7 @@ export default class Preloader extends EventEmitter {
         await this.firstIntro();
         this.moveFlag = true;
         this.scrollOnceEvent = this.onScroll.bind(this);
-        this.touchStart = this.onTouch.bind(this);
+        this.touchStart = this.onTouchStart.bind(this);
         this.touchMove = this.onTouchMove.bind(this);
         window.addEventListener("wheel", this.scrollOnceEvent);
         window.addEventListener("touchstart", this.touchStart);
