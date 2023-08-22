@@ -174,8 +174,8 @@ export default class Room {
     setAnimation() {
         
         this.mixer = new THREE.AnimationMixer(this.actualRoom);
-        this.flame1 = this.mixer.clipAction(this.room.animations[4]);
-        this.flame2 = this.mixer.clipAction(this.room.animations[8]);
+        this.flame1 = this.mixer.clipAction(this.room.animations[0]);
+        this.flame2 = this.mixer.clipAction(this.room.animations[1]);
         this.flame1.play();
         this.flame2.play();    }
 
