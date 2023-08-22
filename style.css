@@ -466,7 +466,7 @@ svg{
     bottom: 120px;
   }
   .hero-second{
-    top: 160px;
+    bottom: 180px;
   }
   .hero-wrapper{
     width: calc(100% - 60px);
