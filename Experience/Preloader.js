@@ -19,6 +19,7 @@ export default class Preloader extends EventEmitter {
         });
 
         this.world.on("worldready", () => {
+            console.log('howlong')
             this.setAssets();
             this.playIntro();
         });
