@@ -27,11 +27,11 @@ svg{
 :root{
   /* Light Theme Variables */
   /* --color-text-light: #333332; */
-  --color-text-light: #5E2F0E;
+  --color-text-light: #591D07;
   --color-background-light: #FAF4F5;
-  --color-pink-light: #e5a1aa;
-  --color-green-light: #7AD0AC;
-  --color-blue-light: #8395CD;
+  --color-pink-light: #a5530e;
+  --color-green-light: #D97925;
+  --color-blue-light: #0x8C2E0B;
 
   /* Dark Theme Variables */
   --color-text-dark: #FAF4E5;
@@ -402,8 +402,8 @@ svg{
 
 .hero-second{
   position: absolute;
-  top: calc(50% - 120px);
-  right: 0;
+  bottom: calc(270px);
+  left: 0;
   color: var(--color-text);
 }
 
@@ -511,5 +511,9 @@ svg{
     font-size: 15px;
     text-align: center;
     color: var(--color-text);
+  }
+
+  .third-text{
+    font-size: 12px;
   }
 }

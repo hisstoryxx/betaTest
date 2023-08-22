@@ -217,6 +217,15 @@ export default class Preloader extends EventEmitter {
                     "introtext"
                 )
                 .to(
+                    ".third-sub .animatedis",
+                    {
+                        yPercent: 0,
+                        stagger: 0.07,
+                        ease: "back.out(1.7)",
+                    },
+                    "introtext"
+                )
+                .to(
                     this.roomChildren.woodfloor.scale,
                     {
                         x: 1,
@@ -234,43 +243,43 @@ export default class Preloader extends EventEmitter {
                         y: 1,
                         z: 1,
                         ease: "back.out(2.2)",
-                        duration: 0.3,
+                        duration: 0.5,
                     },
                     ">-0.4"
                 )
-                .to(
-                    this.roomChildren.tableleft.scale,
-                    {
-                        x: 1,
-                        y: 1,
-                        z: 1,
-                        ease: "back.out(2.2)",
-                        duration: 0.3,
-                    },
-                    ">-0.3"
-                )
-                .to(
-                    this.roomChildren.glassbase.scale,
-                    {
-                        x: 1,
-                        y: 1,
-                        z: 1,
-                        ease: "back.out(2.2)",
-                        duration: 0.3,
-                    },
-                    ">-0.3"
-                )
-                .to(
-                    this.roomChildren.water.scale,
-                    {
-                        x: 1,
-                        y: 1,
-                        z: 1,
-                        ease: "back.out(2.2)",
-                        duration: 0.3,
-                    },
-                    ">-0.3"
-                )
+                // .to(
+                //     this.roomChildren.tableleft.scale,
+                //     {
+                //         x: 1,
+                //         y: 1,
+                //         z: 1,
+                //         ease: "back.out(2.2)",
+                //         duration: 0.3,
+                //     },
+                //     ">-0.3"
+                // )
+                // .to(
+                //     this.roomChildren.glassbase.scale,
+                //     {
+                //         x: 1,
+                //         y: 1,
+                //         z: 1,
+                //         ease: "back.out(2.2)",
+                //         duration: 0.3,
+                //     },
+                //     ">-0.3"
+                // )
+                // .to(
+                //     this.roomChildren.water.scale,
+                //     {
+                //         x: 1,
+                //         y: 1,
+                //         z: 1,
+                //         ease: "back.out(2.2)",
+                //         duration: 0.3,
+                //     },
+                //     ">-0.3"
+                // )
                 .to(
                     this.roomChildren.dish.scale,
                     {
@@ -327,35 +336,37 @@ export default class Preloader extends EventEmitter {
                     y: 1,
                     z: 1,
                     ease: "back.out(2.2)",
-                    duration: 0.3,
+                    duration: 0.5,
                 })
-                .to(this.roomChildren.chamomile.scale, {
-                    x: 1,
-                    y: 1,
-                    z: 1,
-                    ease: "back.out(2.2)",
-                    duration: 0.3,
-                })
+                
+                
+                // .to(this.roomChildren.chamomile.scale, {
+                //     x: 1,
+                //     y: 1,
+                //     z: 1,
+                //     ease: "back.out(2.2)",
+                //     duration: 0.3,
+                // })
                 .to(this.roomChildren.photo1.scale, {
                     x: 1,
                     y: 1,
                     z: 1,
                     ease: "back.out(2.2)",
-                    duration: 0.3,
+                    duration: 0.5,
                 }, ">-0.1")
-                .to(this.roomChildren.wallphoto1.scale, {
-                    x: 1,
-                    y: 1,
-                    z: 1,
-                    ease: "back.out(2.2)",
-                    duration: 0.3,
-                }, ">-0.1")
+                // .to(this.roomChildren.wallphoto1.scale, {
+                //     x: 1,
+                //     y: 1,
+                //     z: 1,
+                //     ease: "back.out(2.2)",
+                //     duration: 0.3,
+                // }, ">-0.1")
                 .to(this.roomChildren.photo2.scale, {
                     x: 1,
                     y: 1,
                     z: 1,
                     ease: "back.out(2.2)",
-                    duration: 0.3,
+                    duration: 0.5,
                 },">-0.0")
                 .to(this.roomChildren.photo3.scale, {
                     x: 1,
@@ -369,21 +380,21 @@ export default class Preloader extends EventEmitter {
                     y: 1,
                     z: 1,
                     ease: "back.out(2.2)",
-                    duration: 0.3,
+                    duration: 0.5,
                 },">-0.0")
                 .to(this.roomChildren.photo5.scale, {
                     x: 1,
                     y: 1,
                     z: 1,
                     ease: "back.out(2.2)",
-                    duration: 0.3,
+                    duration: 0.5,
                 },">-0.0")
                 .to(this.roomChildren.window.scale, {
                     x: 1,
                     y: 1,
                     z: 1,
                     ease: "back.out(2.2)",
-                    duration: 0.3,
+                    duration: 0.5,
                 },"after")
                 .to(this.roomChildren.toplight.scale, {
                     x: 1,
@@ -392,19 +403,26 @@ export default class Preloader extends EventEmitter {
                     ease: "back.out(2.2)",
                     duration: 0.3,
                 },"after")
+                .to(this.roomChildren.topflame.scale, {
+                    x: 1,
+                    y: 1,
+                    z: 1,
+                    ease: "back.out(2.2)",
+                    duration: 0.5,
+                })
                 // .set(this.roomChildren.mini_floor.scale, {
                 //     x: 1,
                 //     y: 1,
                 //     z: 1,
                 // })
                 .to(
-                    this.roomChildren.floorstuffs.scale,
+                    this.roomChildren.stand.scale,
                     {
                         x: 1,
                         y: 1,
                         z: 1,
                         ease: "back.out(2.2)",
-                        duration: 0.3,
+                        duration: 0.5,
                     },
                     ">-0.1"
                 )
@@ -415,7 +433,7 @@ export default class Preloader extends EventEmitter {
                         y: 1,
                         z: 1,
                         ease: "back.out(2.2)",
-                        duration: 0.3,
+                        duration: 0.5,
                     },
                     "chair"
                 )
@@ -443,13 +461,22 @@ export default class Preloader extends EventEmitter {
         }
     }
 
-    onTouch(e) {
+    onTouchStart(e) {
         this.initalY = e.touches[0].clientY;
+        
+        
+        if (this.initalY > 0) {
+            console.log("swipped up");
+            this.removeEventListeners();
+            this.playSecondIntro();
+        }
+        this.intialY = null;
     }
 
     onTouchMove(e) {
         let currentY = e.touches[0].clientY;
         let difference = this.initalY - currentY;
+        
         if (difference > 0) {
             console.log("swipped up");
             this.removeEventListeners();
@@ -469,7 +496,7 @@ export default class Preloader extends EventEmitter {
         await this.firstIntro();
         this.moveFlag = true;
         this.scrollOnceEvent = this.onScroll.bind(this);
-        this.touchStart = this.onTouch.bind(this);
+        this.touchStart = this.onTouchStart.bind(this);
         this.touchMove = this.onTouchMove.bind(this);
         window.addEventListener("wheel", this.scrollOnceEvent);
         window.addEventListener("touchstart", this.touchStart);

@@ -14,7 +14,9 @@ import World from "./World/World.js";
 import Controls from "./World/Controls.js";
 import confetti from "canvas-confetti";
 
-var duration = 15 * 1000;
+
+var duration = 20 * 1000;
+
 var animationEnd = Date.now() + duration;
 var skew = 1;
 

@@ -122,26 +122,28 @@ export default class Controls {
                         trigger: ".first-move",
                         start: "top top",
                         end: "bottom bottom",
-                        scrub: 2,
+                        scrub: 3,
                         invalidateOnRefresh: true,
                     },
                 })
-                this.firstMoveTimeline.fromTo(
+                .fromTo(
                         this.room.position,
                         { x: 0, y: 0, z: 0 },
                         {
                             x: () => {
                                 return this.sizes.width * 0.0014;
                             },
-                        }
+                        },
+                        "start"
                 )
                     .to(
                         this.room.scale,
                         {
-                            x: 0.25,
-                            y: 0.25,
-                            z: 0.25,
-                        }
+                            x: 0.4,
+                            y: 0.4,
+                            z: 0.4,
+                        },
+                        "start"
                     )
                     .to(
                         this.rectLight,
@@ -169,7 +171,7 @@ export default class Controls {
                         trigger: ".second-move",
                         start: "top top",
                         end: "bottom bottom",
-                        scrub: 0.6,
+                        scrub: 3,
                         invalidateOnRefresh: true,
                     },
                 })
@@ -209,13 +211,45 @@ export default class Controls {
                         trigger: ".third-move",
                         start: "top top",
                         end: "bottom bottom",
-                        scrub: 0.6,
+                        scrub: 3,
                         invalidateOnRefresh: true,
                     },
                 }).to(this.camera.orthographicCamera.position, {
                     y: 1.5,
                     x: -4.1,
                 });
+
+                 // Fourth section -----------------------------------------
+                 this.fourthMoveTimeline = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".fourth-move",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 4,
+                        invalidateOnRefresh: true,
+                    },
+                })
+                .fromTo(
+                    this.room.position,
+                    { x: 0, y: 0, z: 0 },
+                    {
+                        x: () => {
+                            return - this.sizes.width * 0.002;
+                        },
+                    },
+                    "start"
+            )
+                    .to(
+                        this.room.scale,
+                        {
+                            x: 0.11,
+                            y: 0.11,
+                            z: 0.11,
+                        },
+                        "start"
+                    )
+                   
+                    
             },
 
             // Mobile
@@ -249,16 +283,16 @@ export default class Controls {
                         trigger: ".first-move",
                         start: "top top",
                         end: "bottom bottom",
-                        scrub: 0.2,
+                        scrub: 5,
                         invalidateOnRefresh: true,
                     },
                 })
                     .to(
                         this.room.scale,
                         {
-                            x: 0.25,
-                            y: 0.25,
-                            z: 0.25,
+                            x: 0.32,
+                            y: 0.32,
+                            z: 0.32,
                         },
                         "start"
                     )
@@ -273,10 +307,10 @@ export default class Controls {
                     .to(
                         this.room.position,
                         {
-                            x: -1,
+                            x: -1.5,
                             z: 2.5,
                         },
-                        "start"
+                        
                     );
 
 
@@ -286,7 +320,7 @@ export default class Controls {
                         trigger: ".second-move",
                         start: "top top",
                         end: "bottom bottom",
-                        scrub: 0.2,
+                        scrub: 4,
                         invalidateOnRefresh: true,
                     },
                 })
@@ -311,6 +345,7 @@ export default class Controls {
                         this.room.position,
                         {
                             x: 1.5,
+                            z: 3,
                         },
                         "same"
                     );
@@ -321,12 +356,57 @@ export default class Controls {
                         trigger: ".third-move",
                         start: "top top",
                         end: "bottom bottom",
-                        scrub: 0.6,
+                        scrub: 3,
                         invalidateOnRefresh: true,
                     },
                 }).to(this.room.position, {
                     z: -4.5,
                 });
+
+                // Fourth section -----------------------------------------
+                this.fourthMoveTimeline = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".fourth-move",
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 4,
+                        invalidateOnRefresh: true,
+                    },
+                })
+
+                    .to(
+                        this.room.scale,
+                        {
+                            x: 0.07,
+                            y: 0.07,
+                            z: 0.07,
+                        },
+                        "same"
+                    )
+                    .to(
+                        this.camera.orthographicCamera.position,{
+                            x: 0, 
+                            y: 6.5, 
+                            z: 10},
+                        "same"
+                    )
+                    .to(
+                        this.rectLight,
+                        {
+                            width: 0.3,
+                            height: 0.4,
+                        },
+                        "same"
+                    )
+                    .to(
+                        this.room.position,
+                        {
+                            x: 0,
+                            y: 0,
+                            z: 0,
+                        },
+                        "same"
+                    );
             },
 
             // all
@@ -456,7 +536,7 @@ export default class Controls {
 
                 this.room.children.forEach((child) => {
                     if (child.name === "minifloor") {
-                        console.log('저녁',child)
+                        // console.log('저녁',child)
                         this.first = GSAP.to(child.position, {
                             x: -4.55761,
                             z: 11.2323,
@@ -561,6 +641,7 @@ export default class Controls {
                 this.secondPartTimeline.add(this.eighth);
                 this.secondPartTimeline.add(this.ninth, "-=0.1");
                 this.secondPartTimeline.add(this.tenth, "-=0.1");
+                
             },
         });
     }

@@ -26,7 +26,7 @@ export default class Room {
 
     setModel() {
         this.actualRoom.children.forEach((child) => {
-            console.log('here', child)
+            //console.log('here', child)
             child.castShadow = true;
             child.receiveShadow = true;
 
@@ -53,31 +53,45 @@ export default class Room {
             }
 
             
-            if (child.name === "glassbase") {
-                console.log(child);
-                child.material = new THREE.MeshPhysicalMaterial();
-                child.material.roughness = 0.01;
-                child.material.color.set(0xffffff);
-                child.material.ior = 3;
-                child.material.transmission = 1;
-                //child.material.transparent = true;
-                child.material.opacity = 1;
-                child.material.depthWrite = true;
-                child.material.depthTest = true;
+            // if (child.name === "glassbase") {
+            //     console.log(child);
+            //     child.material = new THREE.MeshPhysicalMaterial();
+            //     child.material.roughness = 0.01;
+            //     child.material.color.set(0xffffff);
+            //     child.material.ior = 3;
+            //     child.material.transmission = 1;
+            //     //child.material.transparent = true;
+            //     child.material.opacity = 1;
+            //     child.material.depthWrite = true;
+            //     child.material.depthTest = true;
                 
-            }
+            // }
 
-            if (child.name === "water") {
-                console.log('water',child);
+            if (child.name === "RealFlame") {
+                
                 child.material = new THREE.MeshPhysicalMaterial();
                 child.material.roughness = -1;
-                child.material.color.set(0x8395cd);
+                child.material.color.set(0xff9e80);
                 child.material.ior = 3;
                 //child.material.transmission = 0.2;
                 child.material.opacity = 1;
                 child.material.depthWrite = false;
                 child.material.depthTest = false;
             }
+
+            if (child.name === "topFlame") {
+                
+                child.material = new THREE.MeshPhysicalMaterial();
+                child.material.roughness = -1;
+                child.material.color.set(0xF25C05);
+                child.material.ior = 3;
+                //child.material.transmission = 0.2;
+                child.material.opacity = 1;
+                child.material.depthWrite = false;
+                child.material.depthTest = false;
+            }
+
+           
 
 
             if (child.name === "minifloor") {
@@ -122,7 +136,7 @@ export default class Room {
             width,
             height
         );
-        rectLight.position.set(4.6477, 3.788, 6,2152);
+        rectLight.position.set(4.6477, 7.788, 6,2152);
         rectLight.rotation.x = -Math.PI / 2;
         rectLight.rotation.z = Math.PI / 4;
         this.actualRoom.add(rectLight);
@@ -131,7 +145,7 @@ export default class Room {
 
         // const rectLightHelper = new RectAreaLightHelper(rectLight);
         // rectLight.add(rectLightHelper);
-        console.log("roon", this.room);
+        //console.log("roon", this.room);
 
         // this.scene.add(this.actualRoom);
         // this.actualRoom.scale.set(0.11, 0.11, 0.11);
@@ -159,9 +173,10 @@ export default class Room {
 
     setAnimation() {
         this.mixer = new THREE.AnimationMixer(this.actualRoom);
-        this.swim = this.mixer.clipAction(this.room.animations[6]);
-        this.swim.play();
-    }
+        this.flame1 = this.mixer.clipAction(this.room.animations[3]);
+        this.flame2 = this.mixer.clipAction(this.room.animations[5]);
+        this.flame1.play();
+        this.flame2.play();    }
 
     onMouseMove() {
         window.addEventListener("mousemove", (e) => {

@@ -8,21 +8,21 @@ export default class Environment {
         this.experience = new Experience();
         this.scene = this.experience.scene;
 
-        // this.gui = new GUI({ container: document.querySelector(".hero-main") });
+        //this.gui = new GUI({ container: document.querySelector(".hero-main") });
         this.obj = {
             colorObj: { r: 0, g: 0, b: 0 },
             intensity: 3,
         };
 
         this.setSunlight();
-        // this.setGUI();
+        //this.setGUI();
     }
 
     setGUI() {
         this.gui.addColor(this.obj, "colorObj").onChange(() => {
             this.sunLight.color.copy(this.obj.colorObj);
             this.ambientLight.color.copy(this.obj.colorObj);
-            console.log(this.obj.colorObj);
+            //console.log(this.obj.colorObj);
         });
         this.gui.add(this.obj, "intensity", 0, 10).onChange(() => {
             this.sunLight.intensity = this.obj.intensity;
@@ -67,14 +67,14 @@ export default class Environment {
             });
         } else {
             GSAP.to(this.sunLight.color, {
-                r: 255 / 255,
-                g: 255 / 255,
-                b: 255 / 255,
+                r: 242 / 255,
+                g: 225 / 255,
+                b: 194 / 255,
             });
             GSAP.to(this.ambientLight.color, {
-                r: 255 / 255,
-                g: 255 / 255,
-                b: 255 / 255,
+                r: 242 / 255,
+                g: 225 / 255,
+                b: 194 / 255,
             });
             GSAP.to(this.sunLight, {
                 intensity: 3,
