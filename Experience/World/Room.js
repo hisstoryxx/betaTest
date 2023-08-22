@@ -122,7 +122,7 @@ export default class Room {
             width,
             height
         );
-        rectLight.position.set(4.6477, 3.788, 6,2152);
+        rectLight.position.set(4.6477, 7.788, 6,2152);
         rectLight.rotation.x = -Math.PI / 2;
         rectLight.rotation.z = Math.PI / 4;
         this.actualRoom.add(rectLight);
@@ -159,10 +159,10 @@ export default class Room {
 
     setAnimation() {
         this.mixer = new THREE.AnimationMixer(this.actualRoom);
-        this.swim = this.mixer.clipAction(this.room.animations[3]);
-        this.swim = this.mixer.clipAction(this.room.animations[5]);
-        this.swim.play();
-    }
+        this.flame1 = this.mixer.clipAction(this.room.animations[3]);
+        this.flame2 = this.mixer.clipAction(this.room.animations[5]);
+        this.flame1.play();
+        this.flame2.play();    }
 
     onMouseMove() {
         window.addEventListener("mousemove", (e) => {
