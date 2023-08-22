@@ -29,11 +29,11 @@ export default class Preloader extends EventEmitter {
         convert(document.querySelector(".hero-main-title"));
         convert(document.querySelector(".hero-main-description"));
         convert(document.querySelector(".hero-second-subheading"));
-        convert(document.querySelector(".second-sub"));
+        // convert(document.querySelector(".second-sub"));
 
         this.room = this.experience.world.room.actualRoom;
         this.roomChildren = this.experience.world.room.roomChildren;
-        console.log(this.roomChildren);
+        //console.log(this.roomChildren);
     }
 
     firstIntro() {
@@ -207,24 +207,24 @@ export default class Preloader extends EventEmitter {
                     },
                     "introtext"
                 )
-                .to(
-                    ".second-sub .animatedis",
-                    {
-                        yPercent: 0,
-                        stagger: 0.07,
-                        ease: "back.out(1.7)",
-                    },
-                    "introtext"
-                )
-                .to(
-                    ".third-sub .animatedis",
-                    {
-                        yPercent: 0,
-                        stagger: 0.07,
-                        ease: "back.out(1.7)",
-                    },
-                    "introtext"
-                )
+                // .to(
+                //     ".second-sub .animatedis",
+                //     {
+                //         yPercent: 0,
+                //         stagger: 0.07,
+                //         ease: "back.out(1.7)",
+                //     },
+                //     "introtext"
+                // )
+                // .to(
+                //     ".third-sub .animatedis",
+                //     {
+                //         yPercent: 0,
+                //         stagger: 0.07,
+                //         ease: "back.out(1.7)",
+                //     },
+                //     "introtext"
+                // )
                 .to(
                     this.roomChildren.woodfloor.scale,
                     {
