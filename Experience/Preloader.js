@@ -293,17 +293,17 @@ export default class Preloader extends EventEmitter {
                     ">-0.2"
                 )
                 
-                // .to(
-                //     this.roomChildren.bible.scale,
-                //     {
-                //         x: 1,
-                //         y: 1,
-                //         z: 1,
-                //         ease: "back.out(2.2)",
-                //         duration: 0.3,
-                //     },
-                //     ">-0.1"
-                // )
+                .to(
+                    this.roomChildren.bible.scale,
+                    {
+                        x: 1,
+                        y: 1,
+                        z: 1,
+                        ease: "back.out(2.2)",
+                        duration: 0.3,
+                    },
+                    ">-0.1"
+                )
                 .to(this.roomChildren.cross.scale, {
                     x: 1,
                     y: 1,
@@ -348,13 +348,13 @@ export default class Preloader extends EventEmitter {
                 //     ease: "back.out(2.2)",
                 //     duration: 0.3,
                 // })
-                // .to(this.roomChildren.photo1.scale, {
-                //     x: 1,
-                //     y: 1,
-                //     z: 1,
-                //     ease: "back.out(2.2)",
-                //     duration: 0.5,
-                // }, ">-0.1")
+                .to(this.roomChildren.photo1.scale, {
+                    x: 1,
+                    y: 1,
+                    z: 1,
+                    ease: "back.out(2.2)",
+                    duration: 0.5,
+                }, ">-0.1")
                 // .to(this.roomChildren.wallphoto1.scale, {
                 //     x: 1,
                 //     y: 1,
@@ -369,20 +369,20 @@ export default class Preloader extends EventEmitter {
                     ease: "back.out(2.2)",
                     duration: 0.5,
                 },">-0.0")
-                // .to(this.roomChildren.photo3.scale, {
-                //     x: 1,
-                //     y: 1,
-                //     z: 1,
-                //     ease: "back.out(2.2)",
-                //     duration: 0.3,
-                // },">-0.0")
-                // .to(this.roomChildren.photo4.scale, {
-                //     x: 1,
-                //     y: 1,
-                //     z: 1,
-                //     ease: "back.out(2.2)",
-                //     duration: 0.5,
-                // },">-0.0")
+                .to(this.roomChildren.photo3.scale, {
+                    x: 1,
+                    y: 1,
+                    z: 1,
+                    ease: "back.out(2.2)",
+                    duration: 0.3,
+                },">-0.0")
+                .to(this.roomChildren.photo4.scale, {
+                    x: 1,
+                    y: 1,
+                    z: 1,
+                    ease: "back.out(2.2)",
+                    duration: 0.5,
+                },">-0.0")
                 .to(this.roomChildren.photo5.scale, {
                     x: 1,
                     y: 1,
