@@ -89,9 +89,9 @@ export default class Experience {
     }
 
     resize() {
-        this.camera.resize();
-        this.world.resize();
-        this.renderer.resize();
+        // this.camera.resize();
+        // this.world.resize();
+        // this.renderer.resize();
     }
 
     update() {
