@@ -112,6 +112,12 @@ svg{
   animation-delay: 0.2s;
 }
 
+/* .swiper {
+  width: 600px;
+  height: 300px;
+} */
+
+
 @keyframes load {
   0% {
     transform: translateY(0)
@@ -291,8 +297,16 @@ svg{
 
 .section-intro-wrapper{
   position: relative;
+  height: 100%;
   padding: 10% 5%;
   border-bottom: 2px solid var(--color-pink);
+  padding-bottom: 100px;
+}
+
+.section-outro-wrapper{
+  position: relative;
+  height: 100%;
+  padding: 10% 5%;
   padding-bottom: 100px;
 }
 
@@ -375,6 +389,45 @@ svg{
   right: 0;
   color: var(--color-pink);
   font-size: 24px;
+}
+
+
+/* swiper */
+.swiper {
+  width: 80vw;
+  height: 50vh;
+}
+
+.swiper-pagination-bullet { width: 12px; height: 12px; background: transparent; border: 1px solid pink; opacity: 1; }
+.swiper-pagination-bullet-active { width: 40px; transition: width .5s; border-radius: 5px; background: pink; border: 1px solid transparent; }
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* background: #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.swiper-button-next,
+.swiper-button-prev
+{
+  color: pink;
+}
+
+.swiper-button-next{
+  right:0px;
+}
+.swiper-button-prev{
+  left:0px;
 }
 
 

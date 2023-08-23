@@ -2,7 +2,7 @@ export default [
     {
         name: "room",
         type: "glbModel",
-        path: "/models/compress4.glb",
+        path: "/models/tryWedding_compress_final.glb",
     },
     // {
     //     name: "screen",

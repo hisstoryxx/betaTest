@@ -3,18 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/textures/favi.svg" />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<link rel="stylesheet" href="css/style.css">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>최초로 박은별 결혼해요</title>
   </head>
   <body class="light-theme">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rozha+One&display=swap" rel="stylesheet">
-    <!-- Confetti -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+   
     
     <div class="experience">
       
@@ -76,6 +85,7 @@
         </section>
 
         <div class="first-move section-margin"></div>
+        
 
         <section class="first-section section left">
           <div class="progress-wrapper progress-bar-wrapper-left">
@@ -157,23 +167,48 @@
           <div class="section-detail-wrapper ">
             
             <div class="section-intro-wrapper blue-text blue-border">
-             
-            <p class="section-text">그런즉 믿음, 소망, 사랑</p>
-            <p class="section-text">이 세 가지는 항상 있을 것인데</p>
-            <p class="section-text">그중 제일은 사랑이라</p>
-            <p class="section-text">고린도전서 13장 13절</p>
+            <h3 class="section-heading">갤러리</h3>
+           
             </div>
-            
+           
+            <div class="section-intro-wrapper blue-text blue-border">
+              <!-- Slider main container -->
+              <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                    <img src="/pic/1.png">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="/pic/2.png">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="/pic/3.png">
+                  </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+              
+              </div>
+       
+           
+             
+              </div>
+
+              <div class="section-outro-wrapper">
+  
+               
+                </div>
+
            
           
-          <!-- <div class="section-detail-wrapper">
-            <h3 class="section-heading">우리 이뻐따</h3>
-            <p class="section-text">내일 달려갈겡</p>
-            <h3 class="section-heading">Lorem Ipsum</h3>
-            <p class="section-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio ullam, soluta deleniti, maiores accusantium non reprehenderit quis quae placeat cum eaque nemo officiis labore cupiditate mollitia quia dolorem nulla vitae?</p>
-            <h3 class="section-heading">Lorem Ipsum</h3>
-            <p class="section-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio ullam, soluta deleniti, maiores accusantium non reprehenderit quis quae placeat cum eaque nemo officiis labore cupiditate mollitia quia dolorem nulla vitae?</p>
-          </div>-->
+        
         </section>
 
         <div class="third-move section-margin"></div>
@@ -280,5 +315,6 @@
       </div>
     </div>
     <script type="module" src="/main.js"></script>
+    <script type="module" src="/js/custom.js"></script>
   </body>
 </html>
