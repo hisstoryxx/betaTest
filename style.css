@@ -427,12 +427,14 @@ svg{
 
 
 .swiper-slide {
+  display: flex;
   text-align: center;
   
   /* background: #fff; */
-  display: flex;
+  
   justify-content: center;
   align-items: center;
+  align-content: center;
   
 }
 
@@ -447,18 +449,19 @@ svg{
 }
 
 .swiper-slide:hover img {
-  position:absolute;
-  display:flex;
   
+  display:flex;
   flex:1;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: 100000000;
-  overflow: visible;
+  overflow: none;
 
 }
 
-/* .slider:hover {
+
+
+/* .slider {
   display:flex;
   flex:1;
   width: 100%;
@@ -584,6 +587,7 @@ svg{
 @media (max-width: 968px){
   .section{
     width: 100%;
+    
   }
   .progress-bar-wrapper-left{
     right: 0;
@@ -630,9 +634,21 @@ svg{
   }
 
   .swiper {
-    width: 80vw;
-    height: 50vh;
+    /* display: flex;
+    flex:1; */
+    width: 100%;
+    
   }
+
+  /* .swiper:hover {
+    display: flex;
+    flex:1;
+    width: 100%;
+    height: fit-content;
+  } */
+
+ 
+
   .name{
     font-size: 19px;
   }
