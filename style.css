@@ -394,41 +394,83 @@ svg{
 
 /* swiper */
 .swiper {
-  width: 80vw;
+  width: 100%;
   height: 50vh;
 }
 
-.swiper-pagination-bullet { width: 12px; height: 12px; background: transparent; border: 1px solid pink; opacity: 1; }
-.swiper-pagination-bullet-active { width: 40px; transition: width .5s; border-radius: 5px; background: pink; border: 1px solid transparent; }
+.swiper-pagination{
+  width: 10px
+}
+
+.swiper-pagination-bullet { 
+ 
+  width: 12px;
+  height: 12px; 
+  background: transparent;
+   border: 1px solid var(--color-pink);
+    opacity: 1;
+}
+.swiper-pagination-bullet-active { 
+  width: 20px; 
+  transition: width .5s;
+  border-radius: 5px; 
+  background: var(--color-pink); 
+  border: 1px solid transparent; 
+}
+
+.pagination_container { 
+  display: flex; 
+  background-color: red;
+  align-items: center; 
+   
+   }
+
 
 .swiper-slide {
   text-align: center;
-  font-size: 18px;
+  
   /* background: #fff; */
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 80%;
   object-fit: contain;
 }
 
 .swiper-button-next,
 .swiper-button-prev
 {
-  color: pink;
+  color: var(--color-pink);
 }
 
 .swiper-button-next{
-  right:0px;
+  right: 0px;
+ 
 }
 .swiper-button-prev{
   left:0px;
 }
+
+.swiper-pagination-progressbar-fill {
+  border: 2px solid var(--color-pink);
+  border-radius: 5px;
+}
+
+.swiper-pagination-progressbar {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+
+/* .swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+} */
 
 
 /* Hero section -------------------------------- */
@@ -485,7 +527,7 @@ svg{
 }
 
 .blue-border{
-  border-color: var(--color-blue);
+  border-color: var(--color-pink);
 }
 
 .blue-background{
@@ -553,6 +595,11 @@ svg{
     margin-top: 20px;
     text-align: center;
     color: var(--color-text);
+  }
+
+  .swiper {
+    width: 80vw;
+    height: 50vh;
   }
   .name{
     font-size: 19px;
