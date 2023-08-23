@@ -15,7 +15,10 @@ export default class Controls {
         this.room = this.experience.world.room.actualRoom;
         this.room.children.forEach((child) => {
             if (child.type === "RectAreaLight") {
+                
                 this.rectLight = child;
+                
+                console.log('불',child)
             }
         });
         this.circleFirst = this.experience.world.floor.circleFirst;

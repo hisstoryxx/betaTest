@@ -129,7 +129,7 @@ export default class Room {
 
         const width = 0.5;
         const height = 0.7;
-        const intensity = 1;
+        const intensity = 7;
         const rectLight = new THREE.RectAreaLight(
             0xffffff,
             intensity,
@@ -150,22 +150,22 @@ export default class Room {
         // this.scene.add(this.actualRoom);
         // this.actualRoom.scale.set(0.11, 0.11, 0.11);
 
-        // const topLight = new THREE.RectAreaLight(
-        //     0xFFF1A7,
-        //     intensity,
-        //     width,
-        //     height
-        // );
-        // topLight.position.set(-0.127165 , 20 , 1.73243 );
-        // topLight.rotation.x = -Math.PI / 2;
-        // topLight.rotation.z = Math.PI / 4;
-        // this.actualRoom.add(topLight);
+        const topLight = new THREE.RectAreaLight(
+            0xffad72,
+            intensity,
+            width,
+            height
+        );
+        topLight.position.set(0.323824, 27.8406, -0.106641);
+        topLight.rotation.x = -Math.PI / 2;
+        topLight.rotation.z = Math.PI / 4;
+        this.actualRoom.add(topLight);
 
-        // this.roomChildren["topLight"] = topLight;
+        this.roomChildren["topLight"] = topLight;
 
-        // // const rectLightHelper = new RectAreaLightHelper(rectLight);
-        // // rectLight.add(rectLightHelper);
-        // console.log("roon", this.room);
+        // const rectLightHelper = new RectAreaLightHelper(rectLight);
+        // rectLight.add(rectLightHelper);
+        console.log("roon", this.room);
 
         this.scene.add(this.actualRoom);
         this.actualRoom.scale.set(0.11, 0.11, 0.11);
