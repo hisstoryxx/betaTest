@@ -70,8 +70,8 @@ export default class Room {
             if (child.name === "RealFlame") {
                 
                 child.material = new THREE.MeshPhysicalMaterial();
-                child.material.roughness = -1;
-                child.material.color.set(0xff9e80);
+                child.material.roughness = 0;
+                child.material.color.set(0xff3143);
                 child.material.ior = 3;
                 //child.material.transmission = 0.2;
                 child.material.opacity = 1;
