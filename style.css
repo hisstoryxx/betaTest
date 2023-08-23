@@ -9,7 +9,7 @@
 
 html, body{
   font-family: 'Rozha One', serif;
-  font-family: 'Noto Serif KR', serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* body{
@@ -515,7 +515,7 @@ svg{
 
 .hero-second-subheading{
   font-size: 64px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-text);
 }
 
@@ -561,19 +561,19 @@ svg{
     bottom: 120px;
   }
   .hero-second{
-    bottom: 180px;
+    bottom: 170px;
   }
   .hero-wrapper{
     width: calc(100% - 60px);
   }
   .hero-main-title{
-    font-size: 32px;
+    font-size: 20px;
   }
   .hero-main-description{
     font-size: 18px;
   }
   .hero-second-subheading{
-    font-size: 28px;
+    font-size: 18px;
   }
 
   .section-intro-wrapper{
