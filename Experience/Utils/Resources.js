@@ -17,10 +17,21 @@ export default class Resources extends EventEmitter {
         this.queue = this.assets.length;
         this.loaded = 0;
         
-       
-    document.getElementById('audio').muted = false
-    document.getElementById('audio').play()
-  
+//         var AudioContext;
+//         var audioContext;
+
+//         window.onload = function() {
+//             navigator.mediaDevices.getUserMedia({ audio: true }).then(() => {
+//                 AudioContext = window.AudioContext || window.webkitAudioContext;
+//                 audioContext = new AudioContext();
+//             }).catch(e => {
+//                 console.error(`Audio permissions denied: ${e}`);
+//             });
+//         }
+//         window.addEventListener('pageshow', () => {
+//     document.getElementById('audio').muted = false
+//     document.getElementById('audio').play()
+//   })
 
         this.setLoaders();
         this.startLoading();
