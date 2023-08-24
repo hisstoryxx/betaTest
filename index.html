@@ -32,7 +32,7 @@
       
       <canvas class="experience-canvas"></canvas>
     </div>
-    <audio id="vid" src="/textures/music1.mp3" autoplay muted loop></audio>
+    <audio id="audio" src="/textures/music1.mp3" autoplay muted loop></audio>
     <!-- Preloader -->
     <div class="preloader">
       <div class="preloader-wrapper">
@@ -606,10 +606,10 @@ var pagingSwiper = new Swiper(".swiper", {
 
 mainSwiper.controller.control = pagingSwiper;
 
- //document.getElementById("vid").muted = true;// 소리 끄기
-  
-//   //## (주의점)Muted Play중에 Muted을 없애면, 실행이 멈춥니다. #####
-   document.getElementById("vid").muted = false;// 소리 켜기 
+// window.addEventListener('touchstart', () => {
+//     document.getElementById('audio').muted = false
+//     document.getElementById('audio').play()
+//   })
 
   </script>
   

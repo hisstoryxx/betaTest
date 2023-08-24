@@ -16,6 +16,11 @@ export default class Resources extends EventEmitter {
         this.items = {};
         this.queue = this.assets.length;
         this.loaded = 0;
+        
+       
+    document.getElementById('audio').muted = false
+    document.getElementById('audio').play()
+  
 
         this.setLoaders();
         this.startLoading();
