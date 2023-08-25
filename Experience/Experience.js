@@ -15,46 +15,46 @@ import Controls from "./World/Controls.js";
 import confetti from "canvas-confetti";
 
 
-var duration = 27 * 1000;
+// var duration = 27 * 1000;
 
-var animationEnd = Date.now() + duration;
-var skew = 1;
+// var animationEnd = Date.now() + duration;
+// var skew = 1;
 
-function randomInRange(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-
-  var timeLeft = animationEnd - Date.now();
-  var ticks = Math.max(200, 500 * (timeLeft / duration));
-  skew = Math.max(0.8, skew - 0.001);
+// function randomInRange(min, max) {
+//   return Math.random() * (max - min) + min;
+// }
 
 
-(function frame() {
-    var timeLeft = animationEnd - Date.now();
-    var ticks = Math.max(200, 500 * (timeLeft / duration));
-    skew = Math.max(0.8, skew - 0.001);
+//   var timeLeft = animationEnd - Date.now();
+//   var ticks = Math.max(200, 500 * (timeLeft / duration));
+//   skew = Math.max(0.8, skew - 0.001);
+
+
+// (function frame() {
+//     var timeLeft = animationEnd - Date.now();
+//     var ticks = Math.max(200, 500 * (timeLeft / duration));
+//     skew = Math.max(0.8, skew - 0.001);
   
-    confetti({
-      particleCount: 1,
-      startVelocity: 0,
-      ticks: ticks,
-      origin: {
-        x: Math.random(),
-        // since particles fall down, skew start toward the top
-        y: (Math.random() * skew) - 0.2
-      },
-      colors: ['#fffff'],
-      shapes: ['circle'],
-      gravity: randomInRange(0.4, 0.6),
-      scalar: randomInRange(0.4, 1),
-      drift: randomInRange(-0.4, 0.4)
-    });
+//     confetti({
+//       particleCount: 1,
+//       startVelocity: 0,
+//       ticks: ticks,
+//       origin: {
+//         x: Math.random(),
+//         // since particles fall down, skew start toward the top
+//         y: (Math.random() * skew) - 0.2
+//       },
+//       colors: ['#fffff'],
+//       shapes: ['circle'],
+//       gravity: randomInRange(0.4, 0.6),
+//       scalar: randomInRange(0.4, 1),
+//       drift: randomInRange(-0.4, 0.4)
+//     });
   
-    if (timeLeft > 0) {
-      requestAnimationFrame(frame);
-    }
-  }());
+//     if (timeLeft > 0) {
+//       requestAnimationFrame(frame);
+//     }
+//   }());
 
 export default class Experience {
     static instance;
