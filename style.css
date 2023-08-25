@@ -193,18 +193,42 @@ svg{
   justify-content: center;
   align-items: center;
   top: 48px;
-  right: 48px;
+  right: 38px;
   z-index: 99999999999999;
 }
 
 .sun-wrapper, 
-.moon-wrapper{
+.moon-wrapper,
+.mute-wrapper
+{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   color: var(--color-text);
 }
+
+.mute-wrapper{
+  
+  cursor: pointer;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-background);
+  border-radius: 999px;
+  margin: 0px 8px;
+  border: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.mute-wrapper:active{
+  background-color: var(--color-pink);
+}
+
+
 
 .toggle-button{
   cursor: pointer;

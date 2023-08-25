@@ -46,6 +46,7 @@
 
     <div class="page" asscroll-container>
 
+      <!-- Toggle bar -->
         <div class="toggle-bar">
           <div class="sun-wrapper">
             <svg xmlns="http://www.w3.org/2000/svg"  height="24" viewBox="0 -960 960 960" width="24"><path fill="currentColor" d="M444-768v-144h72v144h-72Zm265 112-54-52 104-102 52 50-102 104Zm59 212v-72h144v72H768ZM444-48v-144h72v144h-72ZM251-658 147-760l54-50 101 101-51 51Zm509 511L659-252l50-50 104 100-53 55ZM48-444v-72h144v72H48Zm152 297-51-53 102-100 25 24 24 25-100 104Zm280-93q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-72q70 0 119-49t49-119q0-70-49-119t-119-49q-70 0-119 49t-49 119q0 70 49 119t119 49Zm0-168Z"/></svg>
@@ -58,7 +59,16 @@
           <div class="moon-wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="currentColor" d="M479.961-144Q340-144 242-242t-98-238q0-140 97.93-238t237.831-98q13.057 0 25.648 1T531-812q-39 29-62 72t-23 92q0 85 58.5 143.5T648-446q49 0 92-23t72-62q2 13 3 25.591 1 12.591 1 25.648 0 139.901-98.039 237.831-98.04 97.93-238 97.93Zm.039-72q82 0 148.776-47.074Q695.553-310.147 727-386q-20 5-39.667 8.5Q667.667-374 648-374q-113.858 0-193.929-80.071T374-648q0-19.667 3.5-39.333Q381-707 386-727q-75.853 31.447-122.926 98.224Q216-562 216-480q0 110 77 187t187 77Zm-14-250Z"/></svg>
           </div>
-
+        
+          <div class = "mute-wrapper">
+           
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="currentColor" d="M813-56 681-188q-28 20-60.5 34.5T553-131v-62q23-7 44.5-15.5T638-231L473-397v237L273-360H113v-240h156L49-820l43-43 764 763-43 44Zm-36-232-43-43q20-34 29.5-71.923T773-481q0-103.322-60-184.661T553-769v-62q124 28 202 125.5T833-481q0 51-14 100t-42 93ZM643-422l-90-90v-130q47 22 73.5 66t26.5 96q0 15-2.5 29.5T643-422ZM473-592 369-696l104-104v208Zm-60 286v-150l-84-84H173v120h126l114 114Zm-42-192Z"/></svg> -->
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="currentColor" d="M560-131v-62q97-28 158.5-107.5T780-481q0-101-61-181T560-769v-62q124 28 202 125.5T840-481q0 127-78 224.5T560-131ZM120-360v-240h160l200-200v640L280-360H120Zm420 48v-337q55 17 87.5 64T660-480q0 57-33 104t-87 64ZM420-648 307-540H180v120h127l113 109v-337Zm-94 168Z"/></svg>
+            
+            
+          </div>
+        
+        
         </div>
       <div class="page-wrapper" asscroll>
         <section class="hero">
@@ -617,10 +627,38 @@ mainSwiper.controller.control = pagingSwiper;
 //                 console.error(`Audio permissions denied: ${e}`);
 //             });
 //         }
-        window.addEventListener('touchstart', () => {
-    document.getElementById('audio').muted = false
-    document.getElementById('audio').play()
-  })
+
+let myAudio = document.getElementById("audio") // Audio객체 취득
+myAudio.load();
+let flag = false
+  //       window.addEventListener('touchstart', () => {
+          
+  //         myAudio.muted = true
+  //         myAudio.muted = false
+  //         myAudio.volume = 0.5;
+  //         myAudio.play()
+  // })
+
+  document.querySelector('.mute-wrapper').addEventListener('touchstart', () => {
+    console.log(flag = !flag);
+    if(flag){
+      document.querySelector(".mute-wrapper").innerHTML= `<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="currentColor" d="M813-56 681-188q-28 20-60.5 34.5T553-131v-62q23-7 44.5-15.5T638-231L473-397v237L273-360H113v-240h156L49-820l43-43 764 763-43 44Zm-36-232-43-43q20-34 29.5-71.923T773-481q0-103.322-60-184.661T553-769v-62q124 28 202 125.5T833-481q0 51-14 100t-42 93ZM643-422l-90-90v-130q47 22 73.5 66t26.5 96q0 15-2.5 29.5T643-422ZM473-592 369-696l104-104v208Zm-60 286v-150l-84-84H173v120h126l114 114Zm-42-192Z"/></svg>`
+      myAudio.muted = true
+          myAudio.muted = false
+          myAudio.volume = 0.5;
+          myAudio.play()
+
+    }else {
+      document.querySelector(".mute-wrapper").innerHTML= `<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="currentColor" d="M560-131v-62q97-28 158.5-107.5T780-481q0-101-61-181T560-769v-62q124 28 202 125.5T840-481q0 127-78 224.5T560-131ZM120-360v-240h160l200-200v640L280-360H120Zm420 48v-337q55 17 87.5 64T660-480q0 57-33 104t-87 64ZM420-648 307-540H180v120h127l113 109v-337Zm-94 168Z"/></svg>`;
+      myAudio.pause();
+    }
+    
+    
+        });
+  
+  
+        
+  
   </script>
   
 </html>
