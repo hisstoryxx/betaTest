@@ -441,7 +441,7 @@
 
           <div class="section-intro-wrapper green-text green-border">
             <h1 class="section-title green-text green-border">
-              <span class="section-title-text green-text">오시는 길</span>
+              <span class="section-heading green-text">오시는 길</span>
               <!-- <div class="section-title-decoration styleOne green-border"></div>
               <div class="section-title-decoration styleTwo green-border"></div>
               <div class="section-title-decoration styleThree green-background green-border"></div> -->
@@ -638,6 +638,10 @@ let flag = false
   //         myAudio.volume = 0.5;
   //         myAudio.play()
   // })
+
+  window.addEventListener('load',() => {
+    console.log('start')
+  })
 
   document.querySelector('.mute-wrapper').addEventListener('touchstart', () => {
     console.log(flag = !flag);

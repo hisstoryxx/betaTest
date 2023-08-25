@@ -367,7 +367,9 @@ svg{
 /* Fancy Decoration Part of Section */
 .section-title{
   position: relative;
-  color: var(--color-pink)
+  color: var(--color-pink);
+  text-align: center;
+
 }
 
 .section-title-text{
