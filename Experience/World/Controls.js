@@ -18,7 +18,7 @@ export default class Controls {
                 
                 this.rectLight = child;
                 
-                console.log('불',child)
+                //console.log('불',child)
             }
         });
         this.circleFirst = this.experience.world.floor.circleFirst;

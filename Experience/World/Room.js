@@ -145,7 +145,7 @@ export default class Room {
 
         // const rectLightHelper = new RectAreaLightHelper(rectLight);
         // rectLight.add(rectLightHelper);
-        console.log("roon", this.room);
+        //console.log("roon", this.room);
 
         // this.scene.add(this.actualRoom);
         // this.actualRoom.scale.set(0.11, 0.11, 0.11);
@@ -165,7 +165,7 @@ export default class Room {
 
         // const rectLightHelper = new RectAreaLightHelper(rectLight);
         // rectLight.add(rectLightHelper);
-        console.log("roon", this.room);
+        //console.log("roon", this.room);
 
         this.scene.add(this.actualRoom);
         this.actualRoom.scale.set(0.11, 0.11, 0.11);

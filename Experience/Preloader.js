@@ -19,7 +19,7 @@ export default class Preloader extends EventEmitter {
         });
 
         this.world.on("worldready", () => {
-            console.log('howlong')
+            //console.log('howlong')
             this.setAssets();
             this.playIntro();
         });
@@ -467,7 +467,7 @@ export default class Preloader extends EventEmitter {
         
         
         if (this.initalY > 0) {
-            console.log("swipped up");
+            //console.log("swipped up");
             this.removeEventListeners();
             this.playSecondIntro();
         }
@@ -479,7 +479,7 @@ export default class Preloader extends EventEmitter {
         let difference = this.initalY - currentY;
         
         if (difference > 0) {
-            console.log("swipped up");
+            //console.log("swipped up");
             this.removeEventListeners();
             this.playSecondIntro();
         }
