@@ -8,11 +8,11 @@ export default class Environment {
         this.experience = new Experience();
         this.scene = this.experience.scene;
 
-        //this.gui = new GUI({ container: document.querySelector(".hero-main") });
-        this.obj = {
-            colorObj: { r: 0, g: 0, b: 0 },
-            intensity: 3,
-        };
+        // this.gui = new GUI({ container: document.querySelector(".hero-main") });
+        // this.obj = {
+        //     colorObj: { r: 0, g: 0, b: 0 },
+        //     intensity: 3,
+        // };
 
         this.setSunlight();
         //this.setGUI();
@@ -68,13 +68,13 @@ export default class Environment {
         } else {
             GSAP.to(this.sunLight.color, {
                 r: 242 / 255,
-                g: 225 / 255,
-                b: 194 / 255,
+                g: 238 / 255,
+                b: 136 / 255,
             });
             GSAP.to(this.ambientLight.color, {
                 r: 242 / 255,
-                g: 225 / 255,
-                b: 194 / 255,
+                g: 238 / 255,
+                b: 136 / 255,
             });
             GSAP.to(this.sunLight, {
                 intensity: 3,

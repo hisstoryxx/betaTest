@@ -38,7 +38,7 @@ export default class Room {
                 });
             }
 
-            // console.log(child);
+             //console.log(child);
 
             if (child.name === "Aquarium") {
                 // console.log(child);
@@ -71,7 +71,7 @@ export default class Room {
                 
                 child.material = new THREE.MeshPhysicalMaterial();
                 child.material.roughness = 0;
-                child.material.color.set(0xff3143);
+                child.material.color.set(0xE02B0B);
                 child.material.ior = 3;
                 //child.material.transmission = 0.2;
                 child.material.opacity = 1;
