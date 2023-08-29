@@ -10,6 +10,7 @@
 html, body{
   font-family: 'Rozha One', serif;
   font-family: 'Noto Sans KR', sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* body{
