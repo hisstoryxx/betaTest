@@ -301,7 +301,7 @@
                   <div class="swiper-slide">
                     <img src="/pic/41.png">
                   </div>
-                  
+
                   <div class="swiper-slide">
                     <img src="/pic/42.png">
                   </div>
@@ -546,7 +546,13 @@ let flag = false
   //         myAudio.play()
   // })
 
-  window.addEventListener('load',() => {
+
+
+  window.addEventListener('touchstart',() => {
+    myAudio.muted = true
+    myAudio.muted = false
+    myAudio.volume = 0.5;
+    myAudio.play()
     console.log('start')
   })
 
