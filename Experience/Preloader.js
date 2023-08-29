@@ -29,6 +29,7 @@ export default class Preloader extends EventEmitter {
         convert(document.querySelector(".intro-text"));
         convert(document.querySelector(".hero-main-title"));
         convert(document.querySelector(".hero-main-description"));
+        convert(document.querySelector(".hero-main-description-time"));
         convert(document.querySelector(".hero-second-subheading"));
         // convert(document.querySelector(".second-sub"));
 
@@ -200,7 +201,16 @@ export default class Preloader extends EventEmitter {
                     "introtext"
                 )
                 .to(
-                    ".first-sub .animatedis",
+                    ".hero-main-description-time .animatedis",
+                    {
+                        yPercent: 0,
+                        stagger: 0.07,
+                        ease: "back.out(1.7)",
+                    },
+                    "introtext"
+                )
+                .to(
+                    ".hero-second-subheading .animatedis",
                     {
                         yPercent: 0,
                         stagger: 0.07,

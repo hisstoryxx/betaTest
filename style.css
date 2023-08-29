@@ -561,7 +561,7 @@ svg{
 
 .hero-second{
   position: absolute;
-  bottom: calc(270px);
+  bottom: 270px;
   left: 0;
   color: var(--color-text);
 }
@@ -573,6 +573,11 @@ svg{
 }
 
 .hero-main-description{
+  font-size: 18px;
+  color: var(--color-text);
+}
+
+.hero-main-description-time{
   font-size: 18px;
   color: var(--color-text);
 }
@@ -624,7 +629,7 @@ svg{
     left: auto;
   }
   .hero-main{
-    bottom: 120px;
+    bottom: 100px;
   }
   .hero-second{
     bottom: 170px;
@@ -636,6 +641,9 @@ svg{
     font-size: 20px;
   }
   .hero-main-description{
+    font-size: 18px;
+  }
+  .hero-main-description-time{
     font-size: 18px;
   }
   .hero-second-subheading{
