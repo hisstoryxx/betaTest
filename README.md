@@ -4,4 +4,5 @@
 - three.js
 - vite
 - Inspired by bokoko33 (https://bokoko33.me/)
+- hosting : https://hisstoryxx.vercel.app/
   
