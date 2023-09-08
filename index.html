@@ -10,7 +10,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-<link rel="stylesheet" href="css/style.css">
+<!-- <link rel="stylesheet" href="css/style.css"> -->
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
@@ -82,7 +82,7 @@
 
             <div class="hero-main">
               <p class="hero-second-subheading">최초로, 박은별</p>
-              <h1 class="hero-main-title">더채플앳청담 커티지홀</h1>
+              <h1 class="hero-main-title">더채플앳청담 커티지홀 3층</h1>
               <p class="hero-main-description">
                 2023 Nov. 11 SAT | 11월 11일(토) 
               </p>
@@ -149,7 +149,7 @@
             <h3 class="section-heading name">박병철 • 최명자 장녀 은별</h3>
             <p class="section-text">2023년 11월 11일 토요일</p>
             <p class="section-text">12 : 30 PM</p>
-            <p class="section-text">더채플앳청담 커티지홀</p>
+            <p class="section-text">더채플앳청담 커티지홀 3층</p>
             <!-- <h4 class="section-heading">2023년 11월 11일 토요일</h4>
             <h4 class="section-heading">12 : 30 PM</h4>
             <h4 class="section-heading">더채플앳청담 커티지홀</h4> -->
@@ -422,19 +422,50 @@
            
             <div class="section-intro-wrapper green-text green-border">
             <h3 class="section-heading">신랑측</h3>
-            
-            <p class="section-text third-text first-bank" > 
-              농협 351-12-080241(채삼녀)</p>
+            <p class="box01">
+              
+          </p>       
+          <p class="box01">
              
-              <p class="section-text third-text">
-                우리 1002-147-687949(최초로)</p>
+          </p>       
+          
+            <!-- <p class="section-text third-text first-bank" > 
+              농협 351-12-080241(채삼녀)</p> -->
+            
+              <!-- <p class="section-text third-text">
+                우리 1002-147-687949(최초로)</p> -->
+                <div class = "bank-wrapper">
+                  <input class="section-text third-text first-bank input-bank" value="농협 351-12-080241(채삼녀)" readonly>
+                  <button class="button-bank" onclick="copy_to_clipboard(event)"><img src="https://blog.kakaocdn.net/dn/N1wUc/btqIl7XZtKM/b44qX9Six1vczz2ISWj4LK/img.png" alt="복사하기">
+                  </button>
+                </div>
+               
+                <div class = "bank-wrapper">
+                  <input class="section-text third-text first-bank input-bank" value="우리 1002-147-687949(최초로)" readonly>
+                  <button class="button-bank" onclick="copy_to_clipboard(event)"><img src="https://blog.kakaocdn.net/dn/N1wUc/btqIl7XZtKM/b44qX9Six1vczz2ISWj4LK/img.png" alt="복사하기">
+                  </button>
+                </div>
+               
 
          
             <h3 class="section-heading">신부측</h3>
+            <div class = "bank-wrapper">
+              <input class="section-text third-text first-bank input-bank" value="신한 110-403-708478(박병철)" readonly>
+              <button class="button-bank" onclick="copy_to_clipboard(event)"><img src="https://blog.kakaocdn.net/dn/N1wUc/btqIl7XZtKM/b44qX9Six1vczz2ISWj4LK/img.png" alt="복사하기">
+              </button>
+            </div>
+           
+            <div class = "bank-wrapper">
+              <input class="section-text third-text first-bank input-bank" value="농협 352-1505-4772-63(박은별)" readonly>
+              <button class="button-bank" onclick="copy_to_clipboard(event)"><img src="https://blog.kakaocdn.net/dn/N1wUc/btqIl7XZtKM/b44qX9Six1vczz2ISWj4LK/img.png" alt="복사하기">
+              </button>
+            </div>
+           
+<!--             
             <p class="section-text third-text">
               신한 110-403-708478 (박병철)</p>
               <p class="section-text third-text">
-                농협 352-1505-4772-63(박은별)</p>
+                농협 352-1505-4772-63(박은별)</p> -->
 
            
           </div>
@@ -529,15 +560,15 @@ myDown.addEventListener('touchstart', () => {
 })
 
 let myAudio = document.getElementById("audio") // Audio객체 취득
-myAudio.load();
+//myAudio.load();
 let flag = false
-  //       window.addEventListener('touchstart', () => {
+        window.addEventListener('load', () => {
           
-  //         myAudio.muted = true
-  //         myAudio.muted = false
-  //         myAudio.volume = 0.5;
-  //         myAudio.play()
-  // })
+          myAudio.muted = true
+          myAudio.muted = false
+          myAudio.volume = 0.5;
+          myAudio.play()
+  })
 
 
 
@@ -545,13 +576,13 @@ let flag = false
   //   window.scrollBy( 0, 400 );
   // })
 
-  window.addEventListener('load',() => {
-    myAudio.muted = true
-    myAudio.muted = false
-    myAudio.volume = 0.5;
-    myAudio.play()
-    //console.log('start')
-  })
+  // window.addEventListener('touchstart',() => {
+  //   myAudio.muted = true
+  //   myAudio.muted = false
+  //   myAudio.volume = 0.5;
+  //   myAudio.play()
+  //   //console.log('start')
+  // })
 
 
   // Setup our function to run on various events
@@ -575,7 +606,15 @@ var someFunction = function (event) {
 document.querySelector('.mute-wrapper').addEventListener('click', someFunction, false);
 // document.querySelector('.mute-wrapper').addEventListener('touchstart', someFunction, false);
   
-        
+
+// copy
+function copy_to_clipboard(event) {    
+  var copyText = event.target.parentNode.previousElementSibling;
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("Copy");
+  alert('복사되었습니다, 감사합니다.');
+}   
   
   </script>
   

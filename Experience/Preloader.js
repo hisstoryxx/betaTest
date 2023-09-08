@@ -483,6 +483,8 @@ export default class Preloader extends EventEmitter {
         window.addEventListener("wheel", this.scrollOnceEvent);
         window.addEventListener("touchstart", this.touchStart);
         window.addEventListener("touchmove", this.touchMove);
+
+       
     }
     async playSecondIntro() {
         this.moveFlag = false;

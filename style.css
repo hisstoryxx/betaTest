@@ -10,7 +10,7 @@
 html, body{
   font-family: 'Rozha One', serif;
   font-family: 'Noto Sans KR', sans-serif;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 /* body{
@@ -614,6 +614,42 @@ svg{
 
 .green-background{
   background-color: var(--color-green);
+}
+
+.bank-wrapper{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  
+}
+
+.input-bank{
+  position: relative;
+  border: none;
+  width: 100%;
+  font-size: 22px;
+  outline: none;
+  background-color: transparent;
+  
+
+  
+}
+.button-bank{
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  width: 60px;
+  height: 100%;
+  align-self: center;
+  background-color: black;
+  border-radius: 999px;
+  margin: 0px 8px;
+  border: none;
+  
+}
+button img{
+  width: 100%;
 }
 
 
