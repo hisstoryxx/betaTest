@@ -167,6 +167,10 @@ svg{
 
 
 .arrow-svg-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 90%;
   left: 50%;
@@ -174,8 +178,6 @@ svg{
   color: var(--color-text);
   transform: translate(-50%, -50%);
   animation: bounce 0.5s ease-in alternate infinite;
- 
-  
   
 }
 
@@ -183,11 +185,13 @@ svg{
   display: flex;
   justify-content: center;
   align-items: center;
-  flex:1;
-  font-weight: 500;
+  position: absolute;
+  padding-bottom: 30px;
+  width: 150px;
   font-size: 10px;
   color: var(--color-text);
-  transform: translate(-50%, -50%);
+  
+  
 }
 
 
