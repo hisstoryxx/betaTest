@@ -496,7 +496,7 @@ svg{
 
 }
 
-.swiper-slide:hover img {
+/* .swiper-slide:hover img {
   position:relative;
   display:flex;
   flex:1;
@@ -505,7 +505,7 @@ svg{
   z-index: 100000000;
   overflow: none;
 
-}
+} */
 
 
 
