@@ -538,11 +538,11 @@
    
   // });
 
-  var mainSwiper = new Swiper(".swiper", {
-  autoplay: {
-    delay: 2000,
-    disableOnInteraction: true,
-  },
+  const mainSwiper = new Swiper(".swiper", {
+  // autoplay: {
+  //   delay: 2000,
+  //   disableOnInteraction: true,
+  // },
   allowTouchMove : false,
   pagination: {
     el: ".swiper-pagination",
@@ -555,7 +555,7 @@
   },
 });
 
-var pagingSwiper = new Swiper(".swiper", {
+const pagingSwiper = new Swiper(".swiper", {
   allowTouchMove : false,
   pagination: {
     el: ".swiper-pagination2",
@@ -643,9 +643,9 @@ function copy_to_clipboard(event) {
 }   
   
   </script>
-  <!-- <script>
+  <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
-  <script defer src="/_vercel/insights/script.js"></script> -->
+  <script defer src="/_vercel/insights/script.js"></script>
   
 </html>
